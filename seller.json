@@ -1,0 +1,27 @@
+[	
+	{
+		"_id": "0000001",
+		"seller_name": "Chocolate Lava",
+		"hashpassword" : "350",
+		"restaurantID" : 99,
+		"creatdate" : "Dessert"
+	},
+
+	{
+		"_id": "0000002",
+		"seller_name": "Crystal Shrimp Dumplings",
+		"hashpassword" : "280",
+		"restaurantID" : 123,
+		"creatdate" : "Appetlizers"
+	},
+
+	{
+		"_id": "0000003",
+		"seller_name": "Egg Drop Soup",
+		"hashpassword" : "350",
+		"restaurantID" : 142,
+		"creatdate" : "Soup"
+	}
+
+
+]
