@@ -1,0 +1,62 @@
+[
+	 {
+		"_id": "001",
+		"name": "Chengdu 1",
+		"address": "30 bay street, 07100",
+		"contact info": {
+			"phoneNum": "919-010-1234",
+			"website": "www.No1chengdu.com"
+		},
+		"imageURL" : "ii/kk",
+		"Dish":[
+			{
+				"_id": "0000001",
+				"title": "Chocolate Lava",
+				"calories" : "350",
+				"image_url" : "../xx"
+			},
+			{
+				"_id": "0000001",
+				"title": "Chocolate Lava",
+				"calories" : "350",
+				"image_url" : "../xx"
+			},
+			{
+				"_id": "0000001",
+				"title": "Chocolate Lava",
+				"calories" : "350",
+				"image_url" : "../xx"
+			}
+		]
+	},
+	{
+		"_id": "002",
+		"name": "Chengdu 1",
+		"address": "30 bay street, 07100",
+		"contact info": {
+			"phoneNum": "919-010-1234",
+			"website": "www.No1chengdu.com"
+		},
+		"imageURL" : "ii/kk",
+		"Dish":[
+			{
+				"_id": "0000001",
+				"title": "Chocolate Lava",
+				"calories" : "350",
+				"image_url" : "../xx"
+			},
+			{
+				"_id": "0000001",
+				"title": "Chocolate Lava",
+				"calories" : "350",
+				"image_url" : "../xx"
+			},
+			{
+				"_id": "0000001",
+				"title": "Chocolate Lava",
+				"calories" : "350",
+				"image_url" : "../xx"
+			}
+		]
+	}
+]
