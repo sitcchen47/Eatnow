@@ -3,24 +3,24 @@
 		"_id": "0000001",
 		"name": "Chocolate Lava",
 		"hashedPassword" : "350",
-		"restaurantsID" : "99",
-		"creatDate" : "12/3/2017"
+		"reviewsID" : ["99"],
+		"creatDate" : "11/21/2018"
 	},
 
 	{
 		"_id": "0000002",
 		"name": "Crystal Shrimp Dumplings",
 		"hashedPassword" : "280",
-		"restaurantsID" : "123",
-		"creatDate" : "12/3/2017"
+		"reviewsID" : ["99"],
+		"creatDate" : "11/21/2018"
 	},
 
 	{
 		"_id": "0000003",
 		"name": "Egg Drop Soup",
 		"hashedPassword" : "350",
-		"restaurantsID" : "142",
-		"creatDate" : "12/3/2017"
+		"reviewsID" : ["99"],
+		"creatDate" : "11/21/2018"
 	}
 
 ]
