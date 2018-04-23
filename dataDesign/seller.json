@@ -1,7 +1,7 @@
 [	
 	{
 		"_id": "0000001",
-		"name": "Chocolate Lava",
+		"name": "Jim Simth",
 		"hashedPassword" : "350",
 		"restaurantsID" : "99",
 		"creatDate" : "12/3/2017"
@@ -9,7 +9,7 @@
 
 	{
 		"_id": "0000002",
-		"name": "Crystal Shrimp Dumplings",
+		"name": "Jenna Smith",
 		"hashedPassword" : "280",
 		"restaurantsID" : "123",
 		"creatDate" : "12/3/2017"
@@ -17,7 +17,7 @@
 
 	{
 		"_id": "0000003",
-		"name": "Egg Drop Soup",
+		"name": "Ann Li",
 		"hashedPassword" : "350",
 		"restaurantsID" : "142",
 		"creatDate" : "12/3/2017"

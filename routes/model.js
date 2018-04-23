@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/Eatnow");
 mongoose.Promise = Promise;
 
-const Sellers = mongoose.model({
+const Sellers = mongoose.model("Sellers", {
     name: {
         type: String,
         require: true
@@ -12,7 +12,7 @@ const Sellers = mongoose.model({
 	creatDate : Date
 });
 
-const Customers = mongoose.model({
+const Customers = mongoose.model("Customers", {
     name: {
         type: String,
         require: true 
@@ -20,9 +20,9 @@ const Customers = mongoose.model({
     hashedPassword: String,
     reviewsID: [String], // review._id
     createDate: Date  
-}),
+});
 
-const Restaurants = mongoose.model({
+const Restaurants = mongoose.model("Restaurants", {
     name: String,
     address: String,
     "contact info": {
@@ -37,9 +37,9 @@ const Restaurants = mongoose.model({
         imgURL: String
     },
     createDate: Date
-}),
+});
 
-const Reviews = mongoose.model({
+const Reviews = mongoose.model("Reviesws", {
     belongtoRestaurants: String, // restaurant._id
     belongtoCustomers: String, // customer._id
     content: String,
@@ -52,4 +52,3 @@ module.exports = {
     Restaurants,
     Reviews
 };
-
