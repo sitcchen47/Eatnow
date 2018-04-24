@@ -1,3 +1,5 @@
+var passport = require('passport');
+
 let localStrategy = require('passport-local').Strategy;
 
 var allmodels = require('../routes/model');
@@ -5,18 +7,18 @@ var sellers = allmodels.Sellers;
 var customers = allmodels.Customers;
 
 module.exports = function(passport) {
-    Passport.serializeUser(function(user, done) {
+    passport.serializeUser(function(user, done) {
         done(null, user._id);
     });
       
-    Passport.deserializeUser(function(id, done) {
+    passport.deserializeUser(function(id, done) {
         users.findById(id, function(err, user) {
             done(err, user);
         });
     });
 
     //local login
-    Passport.use('login', new localStrategy({
+    passport.use('login', new localStrategy({
         usernameField : 'name',
         passwordField : 'password',
         passReqToCallback : true    //lets us check if a user is logged in or not
@@ -50,7 +52,7 @@ module.exports = function(passport) {
     }));
 
     //local sign up
-    Passport.use('signup', new localStrategy({
+    passport.use('signup', new localStrategy({
         usernameField : 'name',
         passwordField : 'password',
         passReqToCallback : true    //lets us check if a user is logged in or not
@@ -71,7 +73,7 @@ module.exports = function(passport) {
                             //create the user
                             var newSeller = new sellers();
                             newSeller.name = name;
-                            newSeller.passport = newSeller.generateHash(password);
+                            newSeller.password = newSeller.generateHash(password);
 
                             newSeller.save(function(err) {
                                 if(err) return done(err);
@@ -94,7 +96,7 @@ module.exports = function(passport) {
                             //create the user
                             var newCustomer = new customers();
                             newCustomer.name = name;
-                            newCustomer.passport = newCustomer.generateHash(password);
+                            newCustomer.password = newSeller.generateHash(password);
 
                             newCustomer.save(function(err) {
                                 if(err) return done(err);

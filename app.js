@@ -8,16 +8,16 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const Handlebars = require("handlebars");
-const Passport = require('passport');
+const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 require('./config/passport')(passport);
-/**/
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-/*
+
 const handlebarsInstance = exphbs.create({
   defaultLayout: "main",
   helpers: {
@@ -29,7 +29,7 @@ const handlebarsInstance = exphbs.create({
       }
   }
 });
-*/
+
 const rewriteUnsupportedBrowserMethods = (req, res, next) =>{
   if (req.body && req.body._method) {
       req.method = req.body._method;
@@ -47,23 +47,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-/*
+
 //passport
 app.use(session({
   secret: 'ilovescotchscotchyscotchscotch', // session secret
   resave: true,
   saveUninitialized: true
 }));
+
 app.use(flash());
-app.use(Passport.initialize());
-app.use(Passport.session());
-*/
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-/*
-require('./routes/login.js')(app, passport); // load our routes and pass in our app and fully configured passport
-require('./routes/index.js')(app, passport);
-*/
+
+require('./routes/login.js')(app, passport); 
+//require('./routes/index.js')(app, passport);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
