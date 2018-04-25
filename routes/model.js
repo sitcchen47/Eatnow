@@ -2,8 +2,6 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost/Eatnow");
 mongoose.Promise = Promise;
 
-var bcrypt   = require('bcrypt-nodejs');
-
 const Sellers = mongoose.model("Sellers", {
     name: {
         type: String,
@@ -48,15 +46,6 @@ const Reviews = mongoose.model("Reviesws", {
     createDate: Date
 });
 
-// generating a hash
-generateHash = function(password) {
-    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-};
-
-// checking if password is valid
-validPassword = function(password) {
-    return bcrypt.compareSync(password, this.password);
-};
 
 module.exports = {
     Sellers,
@@ -65,6 +54,7 @@ module.exports = {
     Reviews
 };
 
+/*
 let seller1 = new Sellers({
     name: "hhhhhhhh",
     hashedPassword: "fdfasdf",
@@ -82,3 +72,4 @@ async function test() {
     });
 }
 test();
+*/

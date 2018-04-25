@@ -1,11 +1,22 @@
 var passport = require('passport');
 
-// let localStrategy = require('passport-local').Strategy;
 let Strategy = require('passport-local').Strategy;
 
 var allmodels = require('../routes/model');
 var sellers = allmodels.Sellers;
 var customers = allmodels.Customers;
+
+var bcrypt   = require('bcrypt-nodejs');
+
+// generating a hash
+const generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+// checking if password is valid
+const validPassword = function(password) {
+    return bcrypt.compareSync(password, this.hashedPassword);
+};
 
 module.exports = function(passport) {
     passport.serializeUser(function(user, done) {
@@ -17,110 +28,96 @@ module.exports = function(passport) {
             done(err, user);
         });
     });
-
-    passport.use(new Strategy({
-        usernameField: "name",
-        passwordField: "password"
-    },
-        function(username, password, cb) {
-          sellers.findOne({name: username}, function(err, user) {
-            if (err) { return cb(err); }
-            if (!user) { return cb(null, false); }
-            if (user.hashedPassword != password) { return cb(null, false); }
-            return cb(null, user);
-          });
-        }));
     
-    // //local login
-    // passport.use('login', new localStrategy({
-    //     usernameField : 'name',
-    //     passwordField : 'password',
-    //     passReqToCallback : true    //lets us check if a user is logged in or not
-    // },
-    // function(req, name, password, done) {
+    //login
+     passport.use('login', new Strategy({
+         usernameField : 'name',
+         passwordField : 'password',
+         passReqToCallback : true    //lets us check if a user is logged in or not
+     },
+     function(req, username, password, done) {
 
-    //     /***** pending coding ******/
-    //     var button = 'sellers';
-    //     if(button === 'sellers') {
-    //         process.nextTick(function(){
-    //             sellers.findOne({ 'name' : name}, function(err, user) {
-    //             if(err) return done(err);
-    //             if(!user) return done(null, false, req.flash('loginMessage', 'No sellers found.'));
-    //             if(!user.validPassword(password)) return done(null, false, req.flash('loginMessage', 'Wrong password.'));
-    //             else
-    //                 return done(null, user);
-    //             });
-    //         });
-    //     }
-    //     else {
-    //         process.nextTick(function(){
-    //             customers.findOne({ 'name' : name}, function(err, user) {
-    //             if(err) return done(err);
-    //             if(!user) return done(null, false, req.flash('loginMessage', 'No users found.'));
-    //             if(!user.validPassword(password)) return done(null, false, req.flash('loginMessage', 'Wrong password.'));
-    //             else
-    //                 return done(null, user);
-    //             });
-    //         });
-    //     }
-    // }));
+         /***** pending coding ******/
+         var button = 'sellers';
+         if(button === 'sellers') {
+             process.nextTick(function(){
+                 sellers.findOne({name: username }, function(err, user) {
+                 if(err) { return done(err);}
+                 if(!user) { return done(null, false, req.flash('loginMessage', 'No sellers found.'));}
+                 if(!bcrypt.compareSync(password, user.hashedPassword)) 
+                    { return done(null, false, req.flash('loginMessage', 'Wrong password.'));}
+                 return done(null, user);
+                 });
+             });
+         }
+         else {
+             process.nextTick(function(){
+                 customers.findOne({name: username }, function(err, user) {
+                 if(err) { return done(err);}
+                 if(!user) { return done(null, false, req.flash('loginMessage', 'No sellers found.'));}
+                 if(!bcrypt.compareSync(password, user.hashedPassword)) 
+                    { return done(null, false, req.flash('loginMessage', 'Wrong password.'));}
+                 return done(null, user);
+                 });
+             });
+         }
+     }));
 
-    // //local sign up
-    // passport.use('signup', new localStrategy({
-    //     usernameField : 'name',
-    //     passwordField : 'password',
-    //     passReqToCallback : true    //lets us check if a user is logged in or not
-    // },
-    // function(req, name, password, done) {
-        
-    //     /***** pending coding ******/
-    //     var button = 'sellers';
-    //     if(button === 'sellers') {
-    //         process.nextTick(function(){
-    //             if(!req.user) {
-    //                 sellers.findOne({'name' : name}, function(err, user) {
-    //                     if(err) return done(err);
-    //                     if(user) {
-    //                         return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
-    //                     } 
-    //                     else {
-    //                         //create the user
-    //                         var newSeller = new sellers();
-    //                         newSeller.name = name;
-    //                         newSeller.password = newSeller.generateHash(password);
+     //sign up
+     passport.use('signup',new Strategy({
+         usernameField : 'name',
+         passwordField : 'password',
+         passReqToCallback : true    //lets us check if a user is logged in or not
+     },
+     function(req, username, password, done) {
+  
+         var button = 'sellers';
+         if(button === 'sellers') {
+             process.nextTick(function(){
+                 if(!req.user) {
+                    sellers.findOne({ name: username }, function(err, user) {
+                         if(err) {return done(err);}
+                         if(!user) { 
+                             //create the user
+                             var newSeller = new sellers({
+                                name: username,
+                                hashedPassword: generateHash(password),
+                                createDate: new Date()
+                             });
+                            
+                             newSeller.save(function(err) {
+                                 if(err) return done(err);
+                                 return done(null, newSeller);
+                             })
+                         }
+                         return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
+                     });
+                 }
+             });
+         }
+         else {
+             process.nextTick(function(){
+                 if(!req.user) {
+                    customers.findOne({name: username }, function(err, user) {
+                         if(err) {return done(err);}
+                         if(!user) {
+                             //create the user
+                             var newSeller = new sellers({
+                                name: username,
+                                hashedPassword: generateHash(password),
+                                createDate: new Date()
+                             });
+                            
+                             newSeller.save(function(err) {
+                                 if(err) return done(err);
+                                 return done(null, newSeller);
+                             })
+                         }
+                         return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
+                     });
+                 }
+             });
+         }
+     }));
 
-    //                         newSeller.save(function(err) {
-    //                             if(err) return done(err);
-    //                             return done(null, newSeller);
-    //                         })
-    //                     }
-    //                 });
-    //             }
-    //         });
-    //     }
-    //     else {
-    //         process.nextTick(function(){
-    //             if(!req.user) {
-    //                 customers.findOne({'name' : name}, function(err, user) {
-    //                     if(err) return done(err);
-    //                     if(user) {
-    //                         return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
-    //                     } 
-    //                     else {
-    //                         //create the user
-    //                         var newCustomer = new customers();
-    //                         newCustomer.name = name;
-    //                         newCustomer.password = newSeller.generateHash(password);
-
-    //                         newCustomer.save(function(err) {
-    //                             if(err) return done(err);
-    //                             return done(null, newCustomer);
-    //                         })
-    //                     }
-    //                 });
-    //             }
-    //         });
-    //     }
-    // }));
 };
-
