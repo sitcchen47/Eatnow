@@ -102,7 +102,7 @@ module.exports = function(passport) {
                          if(err) {return done(err);}
                          if(!user) {
                              //create the user
-                             var newSeller = new sellers({
+                             var newSeller = new customers({
                                 name: username,
                                 hashedPassword: generateHash(password),
                                 createDate: new Date()

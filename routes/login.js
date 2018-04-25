@@ -4,7 +4,7 @@ module.exports = function(app, passport) {
     
     //show home page
     app.get('/', async function(req, res, next) {
-        res.render('index', { title: 'Express' });
+        res.render('index', { title: 'EatNow' });
     });
 
     //logout
@@ -15,7 +15,7 @@ module.exports = function(app, passport) {
 
     //profile
     app.get('/profile', isLoggedIn, async function(req, res) {
-        res.render('profile', {username : req.username});
+        res.render('profile');
     });
 
     //login
