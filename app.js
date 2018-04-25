@@ -59,8 +59,8 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 
 require('./routes/login.js')(app, passport); 
 //require('./routes/index.js')(app, passport);

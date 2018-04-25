@@ -64,3 +64,21 @@ module.exports = {
     Restaurants,
     Reviews
 };
+
+let seller1 = new Sellers({
+    name: "hhhhhhhh",
+    hashedPassword: "fdfasdf",
+    createDate: new Date()
+});
+async function run() {
+    await seller1.save();
+    // console.log(await Sellers.find({}));
+}
+run();
+
+async function test() {
+    Sellers.findById("5adfa8adfd4ac49a665c9f9a", (err, seller) => {
+        console.log(seller);
+    });
+}
+test();
