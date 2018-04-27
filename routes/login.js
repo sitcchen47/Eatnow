@@ -1,7 +1,9 @@
 var router = require('express').Router();
 
 module.exports = function(app, passport) {
-    
+    app.get('/profile', async function(req, res) {
+        res.render('profile');
+    });
     //show home page
     app.get('/', async function(req, res, next) {
         res.render('index', { title: 'Express' });
