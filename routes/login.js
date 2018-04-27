@@ -15,7 +15,12 @@ module.exports = function(app, passport) {
 
     //profile
     app.get('/profile', isLoggedIn, async function(req, res) {
-        res.render('profile');
+        try{
+            res.render('profile', {user : req.user});
+        }catch(e){
+            console.log(e);
+            res.redirect('/');
+        }
     });
 
     //login
@@ -46,6 +51,6 @@ module.exports = function(app, passport) {
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
-
-    res.redirect('/login');
+    else 
+        res.redirect('/login');
 }
