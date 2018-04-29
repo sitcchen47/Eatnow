@@ -7,7 +7,10 @@ module.exports = function(app, passport) {
     
     //show home page
     app.get('/', async function(req, res, next) {
-        res.render('index', { title: 'Express' });
+        res.render('index', { 
+            title: 'Express',
+            partial: 'main-script'
+        });
     });
 
     //logout
