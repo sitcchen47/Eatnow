@@ -1,0 +1,153 @@
+    {{#if user.isSeller}}
+    <div class="container">
+        <button class="btn btn-primary mb-3 trigger">Add a restaurant</button>
+        <form class="needs-validation hidden" enctype="multipart/form-data" method="POST" novalidate> 
+            <div class="form-group">
+                <label for="restaurantName">Name</label>
+                <input type="text" class="form-control" id="restaurantName" name="rname" placeholder="Rice shop" required>
+            </div>
+
+            <div class="form-group">
+                <label for="restaurantPic">Picture</label>
+                <input type="file" class="form-control-file" id="restaurantPic" name="restaurantPic" required>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3 form-group">
+                    <label for="phonenumber">Phone Number</label>
+                    <input type="text" class="form-control" id="phonenumber" placeholder="phone number" name="phoneNum" required>
+                </div>
+                <div class="col-md-6 mb-3 form-group">
+                    <label for="website">Website Address</label>
+                    <input type="text" class="form-control" id="website" placeholder="website" name="website">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" class="form-control" id="inputAddress" name="address1" placeholder="1234 Main St" required>
+            </div>
+            <div class="form-group">
+                <label for="inputAddress2">Address 2</label>
+                <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, studio, or floor">
+            </div>
+
+             <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity" name="city" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control" id="state" name="state" required>
+                        <option selected>Choose...</option>
+                        <option>AL</option>
+                        <option>AK</option>
+                        <option>AZ</option>
+                        <option>AR</option>
+                        <option>CA</option>
+                        <option>CO</option>
+                        <option>CT</option>
+                        <option>DE</option>
+                        <option>FL</option>
+                        <option>GA</option>
+                        <option>HI</option>
+                        <option>ID</option>
+                        <option>IL</option>
+                        <option>IN</option>
+                        <option>IA</option>
+                        <option>KS</option>
+                        <option>KY</option>
+                        <option>LA</option>
+                        <option>ME</option>
+                        <option>MD</option>
+                        <option>MA</option>
+                        <option>MI</option>
+                        <option>MN</option>
+                        <option>MS</option>
+                        <option>MO</option>
+                        <option>MT</option>
+                        <option>NE</option>
+                        <option>NV</option>
+                        <option>NH</option>
+                        <option>NJ</option>
+                        <option>NM</option>
+                        <option>NY</option>
+                        <option>NC</option>
+                        <option>ND</option>
+                        <option>OH</option>
+                        <option>OK</option>
+                        <option>OR</option>
+                        <option>PA</option>
+                        <option>RI</option>
+                        <option>SC</option>
+                        <option>SD</option>
+                        <option>TN</option>
+                        <option>TX</option>
+                        <option>UT</option>
+                        <option>VT</option>
+                        <option>VA</option>
+                        <option>WA</option>
+                        <option>WV</option>
+                        <option>WI</option>
+                        <option>WY</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip" name="zipcode" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </form>
+    </div>
+
+    {{!-- this is a container to show all the restaurants --}}
+    <div class="album py-5 bg-light">
+        <div class="container" >
+            <div class="row" id="newRestaurants">
+                {{#each rests}}
+                    <div class="col-md-4" data-id="{{ _id }}">
+                        <div class="card mb-4 box-shadow">
+                            <img class="card-img-top" src="images/{{this.imgURL}}" alt="Card image cap">
+                            <div class="card-body">
+                                <h4>{{ this.name }}</h4>
+                                <div class="row">
+                                    <div class="col-6 address"> <span>{{ address.address1 }}</span><br>
+                                    <span> {{ address.address2 }} </span> <br>
+                                    <span> {{ address.city }} </span> <br>
+                                    <span> {{ address.state }} </span> <br>
+                                    <span> {{ address.zipcode }} </span> <br>
+                                    </div>
+                                    <div class="col-6 contactInfo">
+                                        <span> {{ contactInfo.phoneNum }} </span>
+                                        <span> <a href="{{ contactInfo.website }}">{{ contactInfo.website }}</a> </span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary view-btn">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary edit-btn">Edit</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary delete-btn">Delete</button>
+                                    </div>
+                                    <small class="text-muted">9 mins</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    <script src="/JavaScript/jquery-3.3.1.js"></script>
+    <script>
+        let triggers = document.querySelectorAll('.trigger');
+        triggers.forEach((triggerdom) => {
+            triggerdom.addEventListener('click', (event) => {
+                triggerdom.nextElementSibling.classList.toggle('hidden');
+            });
+        });
+        // $('.needs-validation').validate();
+    </script>

@@ -26,8 +26,14 @@ const Customers = mongoose.model("Customers", {
 
 const Restaurants = mongoose.model("Restaurants", {
     name: String,
-    address: String,
-    "contact info": {
+    address: {
+        address1: String,
+        address2: String,
+        city: String,
+        state: String,
+        zipcode: String
+    },
+    contactInfo: {
         "phoneNum": String,
         "website": String,
     },
@@ -38,7 +44,8 @@ const Restaurants = mongoose.model("Restaurants", {
         calories: Number,
         imgURL: String
     },
-    createDate: Date
+    createDate: Date,
+    editDate: Date
 });
 
 const Reviews = mongoose.model("Reviesws", {
@@ -65,20 +72,20 @@ module.exports = {
     Reviews
 };
 
-let seller1 = new Sellers({
-    name: "hhhhhhhh",
-    hashedPassword: "fdfasdf",
-    createDate: new Date()
-});
-async function run() {
-    await seller1.save();
-    // console.log(await Sellers.find({}));
-}
-run();
+// let seller1 = new Sellers({
+//     name: "hhhhhhhh",
+//     hashedPassword: "fdfasdf",
+//     createDate: new Date()
+// });
+// async function run() {
+//     await seller1.save();
+//     // console.log(await Sellers.find({}));
+// }
+// run();
 
-async function test() {
-    Sellers.findById("5adfa8adfd4ac49a665c9f9a", (err, seller) => {
-        console.log(seller);
-    });
-}
-test();
+// async function test() {
+//     Sellers.findById("5adfa8adfd4ac49a665c9f9a", (err, seller) => {
+//         console.log(seller);
+//     });
+// }
+// test();
