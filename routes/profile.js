@@ -41,13 +41,14 @@ router.get('/deleteRes/:id', async function(req, res) {
 })
 
 router.post('/upload', upload.single('restaurantPic'), async function (req, res) {
-    const {rname, phoneNum, website, address1, address2, city, state, zipcode} = req.body;
+    const {rname, tag, phoneNum, website, address1, address2, city, state, zipcode} = req.body;
     // validation()
 
     // store to the database
     // the rname should be different!
     let rest = new Restaurants({
         name: rname,
+        tag: tag,
         address: {address1, address2, city, state, zipcode},
         contactInfo: {
             phoneNum, website
@@ -62,6 +63,7 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
         layout: null,
         _id: rest._id,
         name: rest.name,
+        tag: rest.tag,
         address: rest.address,
         contactInfo: rest.contactInfo,
         imgURL: rest.imgURL

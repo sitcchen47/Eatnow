@@ -2,7 +2,12 @@
     <div class="card mb-4 box-shadow">
         <img class="card-img-top" src="images/{{imgURL}}" alt="Card image cap">
         <div class="card-body">
-            <h4>{{ name }}</h4>
+            <div class="row">
+                <h4 class="col-sm-6">{{ name }}</h4>
+                <div class="col-sm-6">
+                    <button class="btn btn-secondary btn-sm">{{ tag }}</button>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-6 address"> <span>{{ address.address1 }}</span><br>
                 <span> {{ address.address2 }} </span> <br>

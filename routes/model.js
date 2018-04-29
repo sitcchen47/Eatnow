@@ -26,6 +26,7 @@ const Customers = mongoose.model("Customers", {
 
 const Restaurants = mongoose.model("Restaurants", {
     name: String,
+    tag: String,
     address: {
         address1: String,
         address2: String,

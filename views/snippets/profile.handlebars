@@ -2,9 +2,22 @@
     <div class="container">
         <button class="btn btn-primary mb-3 trigger">Add a restaurant</button>
         <form class="needs-validation hidden" enctype="multipart/form-data" method="POST" novalidate> 
-            <div class="form-group">
-                <label for="restaurantName">Name</label>
-                <input type="text" class="form-control" id="restaurantName" name="rname" placeholder="Rice shop" required>
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <label for="restaurantName">Name</label>
+                    <input type="text" class="form-control" id="restaurantName" name="rname" placeholder="Rice shop" required>
+                </div>   
+                <div class="col-sm-6 form-group">
+                    <label for="restTag">Tag</label>
+                    <select name="tag" id="restTag" class="form-control">
+                        <option selected>Choose...</option>
+                        <option>American</option>
+                        <option>Chinese</option>                        
+                        <option>Italian</option>                        
+                        <option>Mexican</option>
+                        <option>Indian</option>                        
+                    </select>
+                </div>             
             </div>
 
             <div class="form-group">
@@ -38,8 +51,8 @@
                     <input type="text" class="form-control" id="inputCity" name="city" required>
                 </div>
                 <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <select id="inputState" class="form-control" id="state" name="state" required>
+                    <label for="state">State</label>
+                    <select class="form-control" id="state" name="state" required>
                         <option selected>Choose...</option>
                         <option>AL</option>
                         <option>AK</option>
@@ -112,7 +125,12 @@
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src="images/{{this.imgURL}}" alt="Card image cap">
                             <div class="card-body">
-                                <h4>{{ this.name }}</h4>
+                                <div class="row">
+                                    <h4 class="col-sm-6">{{ name }}</h4>
+                                    <div class="col-sm-6">
+                                        <button class="btn btn-secondary btn-sm">{{ tag }}</button>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-6 address"> <span>{{ address.address1 }}</span><br>
                                     <span> {{ address.address2 }} </span> <br>
