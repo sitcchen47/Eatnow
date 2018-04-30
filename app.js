@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //passport
 app.use(session({
-  secret: 'ilovescotchscotchyscotchscotch', // session secret
+  secret: 'CS546_RocketTeam', // session secret
   resave: true,
   saveUninitialized: true
 }));
@@ -59,11 +59,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-
 require('./routes/login.js')(app, passport); 
-//require('./routes/index.js')(app, passport);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
