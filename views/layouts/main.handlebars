@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">  
+</head>
+<body>
+  <div class="modal fade" id="signin-signup-tab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header pb-0">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true">Sign in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false">Sign up</a>
+            </li>
+          </ul>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
+              <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="loginname">Username</label>
+                    <input id = "loginname"type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="signin-psd">Password</label>
+                    <input id = "signin-psd" type="password" class="form-control" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary login btn-block">Log in</button>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+              <form action="/signup" method="post">
+                <div class="form-group">
+                    <label for="signup-name">Username</label>
+                    <input id = "signup-name" type="text" class="form-control" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="signup-psd">Password</label>
+                    <input id = "signup-psd"type="password" class="form-control" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-psd">Confirm</label>
+                    <input id = "confirm-psd" type="password" class="form-control" name="confirm-psd">
+                </div>
+                <div class="row mb-3">
+                    <label for="SellerRadio" class="col-sm-6">
+                          <input type="radio" name="radio" class="mr-sm-2" id = "SellerRadio" autocomplete="off" checked> Seller
+                    </label>
+                    <label for="CustomerRadio" class="col-sm-6">
+                        <input type="radio" name="radio" class="mr-sm-2" id = "CustomerRadio" autocomplete="off"> Customer
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block signup">Signup</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+          <button class="btn mr-2" data-toggle="modal" data-target="#signin-signup-tab" id="signin-button"><a href="#" >Sign in</a></button>
+          <button class="btn mr-sm-2" data-toggle="modal" data-target="#signin-signup-tab" id="signup-button"><a href="#" >Sign up</a></button>
+      </form>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  {{{body}}}
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <script>
+    (function($) {
+      $('#signin-button').click(function(){
+        $('#signup').removeClass('active');
+        $('#signup').removeClass('show');
+
+        $('#signup-tab').removeClass('active');
+
+        $('#signin').addClass('active');
+        $('#signin').addClass('show');
+        
+        $('#signin-tab').addClass('active');
+      });
+      $('#signup-button').click(function(){
+        $('#signin').removeClass('active');
+        $('#signin').removeClass('show');
+
+        $('#signin-tab').removeClass('active');
+
+        $('#signup').addClass('active');
+        $('#signup').addClass('show');
+
+        $('#signup-tab').addClass('active');
+      });
+    })(window.jQuery);
+  </script>
+  {{> (lookup . 'partial') }}
+</body>
+</html>

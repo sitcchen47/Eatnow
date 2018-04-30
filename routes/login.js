@@ -1,10 +1,16 @@
 var router = require('express').Router();
 
+var profileRouter = require("./profile");
+
 module.exports = function(app, passport) {
+    app.use('/profile', profileRouter);
     
     //show home page
     app.get('/', async function(req, res, next) {
-        res.render('index', { title: 'EatNow' });
+        res.render('index', { 
+            title: 'EatNow',
+            partial: 'main-script'
+        });
     });
 
     //logout

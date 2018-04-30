@@ -37,8 +37,15 @@ const Users = mongoose.model("Users", {
 
 const Restaurants = mongoose.model("Restaurants", {
     name: String,
-    address: String,
-    "contact info": {
+    tag: String,
+    address: {
+        address1: String,
+        address2: String,
+        city: String,
+        state: String,
+        zipcode: String
+    },
+    contactInfo: {
         "phoneNum": String,
         "website": String,
     },
@@ -49,7 +56,8 @@ const Restaurants = mongoose.model("Restaurants", {
         calories: Number,
         imgURL: String
     },
-    createDate: Date
+    createDate: Date,
+    editDate: Date
 });
 
 const Reviews = mongoose.model("Reviesws", {

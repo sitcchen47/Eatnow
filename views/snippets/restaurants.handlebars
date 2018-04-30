@@ -1,0 +1,47 @@
+<div class="col-md-4" data-id="{{ _id }}">
+    <div class="card mb-4 box-shadow">
+        <img class="card-img-top" src="images/{{imgURL}}" alt="Card image cap">
+        <div class="card-body">
+            <div class="row">
+                <h4 class="col-sm-6">{{ name }}</h4>
+                <div class="col-sm-6">
+                    <button class="btn btn-secondary btn-sm">{{ tag }}</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 address"> <span>{{ address.address1 }}</span><br>
+                <span> {{ address.address2 }} </span> <br>
+                <span> {{ address.city }} </span> <br>
+                <span> {{ address.state }} </span> <br>
+                <span> {{ address.zipcode }} </span> <br>
+                </div>
+                <div class="col-6 contactInfo">
+                    <span> {{ contactInfo.phoneNum }} </span>
+                    <span> <a href="{{ contactInfo.website }}">{{ contactInfo.website }}</a> </span>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary view-btn">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary edit-btn">Edit</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary delete-btn">Delete</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+    {{!-- name: String,
+    address: {
+        address1: String,
+        address2: String,
+        city: String,
+        state: String,
+        zipcode: Number
+    },
+    "contact info": {
+        "phoneNum": String,
+        "website": String,
+    },
+    imgURL: String, --}}
