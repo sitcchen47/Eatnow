@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Profile</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script src="/js/jquery-3.3.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <script src="/js/form.js" type="text/javascript"></script>
 </head>
 <body>
-    <form id="profileForm" method="GET">
+    <form id="profileForm" name="profileForm" method="GET">
         <div class="form-group">
             <label for="InputRName">Restaurant Name</label>
             <input type="text" class="form-control" id="InputRName" name="InputRName" placeholder="Enter restaurant name" required>
@@ -38,5 +37,26 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    <div class = "profile">
+        {{#if user.isSeller}}
+		    <h1><div class="alert alert-danger"> hello,
+                 {{user.name}} 
+            </div></h1>
+            <p>you are a seller, you has a restaurantsID : {{user.restaurantsID}} </p>
+            <p>your reviewsID are : {{ user.reviewsID }}</p>
+	    {{else}}
+            <h1><div class="alert alert-danger"> hello,
+                {{user.name}} 
+            </div></h1> 
+            <p>you are a customer</p>
+            <p>your reviewsID are  {{ user.reviewsID }}</p>
+        {{/if}}
+    </div>
+    <p>if you already login, pleast logout to sign up a new account</p>
+    <p>go <a class="btn btn-warning login btn-lg" href="/">home</a></p>
+    <p>go <a class="btn btn-warning login btn-lg" href="/login">Login</a></p>
+	<p>go <a class="btn btn-warning login btn-lg" href="/signup">Signup</a></p>
+	<p>go <a class="btn btn-warning login btn-lg" href="/logout">logout</a></p>		
+
 </body>
 </html>
