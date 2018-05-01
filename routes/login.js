@@ -1,4 +1,6 @@
 var router = require('express').Router();
+var DataModel = require('./model');
+var Restaurants = DataModel.Restaurants;
 
 var profileRouter = require("./profile");
 
@@ -7,8 +9,17 @@ module.exports = function(app, passport) {
     
     //show home page
     app.get('/', async function(req, res, next) {
+        let itRests = await Restaurants.find({"tag": "Italian"});
+        let cnRests = await Restaurants.find({"tag": "Chinese"});
+        console.log(cnRests);
+        let usRests = await Restaurants.find({"tag": "American"});
+        let inRests = await Restaurants.find({"tag": "Indian"});
         res.render('index', { 
             title: 'Express',
+            itRests,
+            cnRests,
+            usRests,
+            inRests,
             partial: 'main-script'
         });
     });
