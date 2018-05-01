@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign up</title>
-	<script src="/js/jquery-3.3.1.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-    <script src="/js/form.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">	
 </head>
 <body>   
     <div class="container">
@@ -26,25 +24,29 @@
 				<input id = "username" type="text" class="form-control" name="username" required>
 			</div>
 			<div class="form-group">
-				<label for="password">Password</label>
-				<input id = "password"type="password" class="form-control" name="password" required>
+				<label for="signup-psd">Password</label>
+				<input id = "signup-psd"type="password" class="form-control" name="password">
 			</div>
 			<div class="form-group">
-				<label for="confirm_password">Confirm Password</label>
-				<input id = "confirm_password"type="password" class="form-control" name="confirm_password" required>
+				<label for="confirm-psd">Confirm</label>
+				<input id = "confirm-psd" type="password" class="form-control" name="confirm-psd">
 			</div>
-			<div>
-      			<input type="checkbox" name="Seller" id = "Seller" value='Seller'/><label>Seller</label>  
-            	<input type="checkbox" name="Customer" id = "Customer" value="Customer"/><label>Customer</label>
+			<div class="row mb-3">
+				<label for="SellerRadio" class="col-sm-6">
+      				<input type="radio" name="radio" class="mr-sm-2" id = "SellerRadio" autocomplete="off" checked> Seller
+				</label>
+				<label for="CustomerRadio" class="col-sm-6">
+            		<input type="radio" name="radio" class="mr-sm-2" id = "CustomerRadio" autocomplete="off"> Customer
+				</label>
 				{{!-- <script type="text/javascript" name = "Seller">function radio() {alert($('[name="radio"]:checked').val());}</script> --}}
 			</div>
-			<button type="submit" class="btn btn-warning signup btn-lg">Signup</button>
+			<button type="submit" class="btn btn-primary btn-block signup">Signup</button>
 		</form>
 
 		<hr>
 
-		<p>Already have an account? <a class="btn btn-warning login btn-lg" href="/login">Login</a></p>
-		<p>Or go <a class="btn btn-warning login btn-lg" href="/">home</a></p>
+		<p>Already have an account? <a class="btn btn-primary login" href="/login">Login</a></p>
+		<p>Or go <a class="btn btn-primary login" href="/">home</a></p>
 
 		</div>
     </div>
