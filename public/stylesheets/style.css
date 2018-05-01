@@ -9,3 +9,23 @@ a {
 .hidden {
   display:none;
 }
+#nav-header {
+  width: 15%;
+}
+
+#sidebar {
+  width: 10%;
+
+  position: fixed;
+  z-index: 1;
+  top: 23%;
+  left: 2.5%;
+}
+
+.main {
+  margin-left: 15%;
+}
+
+/* #list-item-1, #list-item-2, #list-item-3, #list-item-4 {
+  margin-top: 79px;
+} */
