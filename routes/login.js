@@ -32,26 +32,19 @@ module.exports = function(app, passport) {
         req.logout();
         res.redirect('/');
     });
-
-    //login
-    app.get('/login', function(req, res) {
-        res.render('login', { message: req.flash('loginMessage') });
-    });
     
+    // log in
     app.post("/login", passport.authenticate('login', {
         successRedirect: '/profile',
         failureRedirect: '/',
         failureFlash: true
     }));
 
-    //sign up
-    app.get('/signup', function(req, res) {
-        res.render('signup', { message: req.flash('signupMessage') });
-    });
+    // sign up
 
     app.post('/signup', passport.authenticate('signup', {
         successRedirect : '/profile', 
-        failureRedirect : '/signup', 
+        failureRedirect : '/', 
         failureFlash : true
     }));
 }

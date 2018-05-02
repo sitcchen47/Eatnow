@@ -128,9 +128,11 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0" id="modalForm">
+          {{!-- {{#if user }} --}}
           <button class="btn mr-2" data-toggle="modal" data-target="#signin-signup-tab" id="signin-button"><a href="#" >Sign in</a></button>
           <button class="btn mr-sm-2" data-toggle="modal" data-target="#signin-signup-tab" id="signup-button"><a href="#" >Sign up</a></button>
+          {{!-- {{/if}} --}}
       </form>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -145,6 +147,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
   <script>
     (function($) {
+      // 1. preventFormSubmission
+      $('#modalForm').click(function(event) {
+        event.preventDefault();
+      });
+
+      // 2. whent the render page has error alert, show the modal
       if ($('#signinAlert').length) {
         $('#signin-signup-tab').modal("show");
         showSigninPage();
@@ -154,6 +162,8 @@
         showSignupPage();
       }
       
+      // 3. extension: click signin show signin
+      //            click signup show signup
       $('#signin-button').click(function(){
         showSigninPage();
       });
