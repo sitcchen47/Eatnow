@@ -3,8 +3,6 @@
 Xin Song, Chao Chen, Zhuang Yixin
 Stevens CS546 Final Project
 
-<<<<<<< HEAD
-=======
 Usage: 
 
 ```javascript
@@ -29,7 +27,6 @@ Usage:
 2. 明天做 sidebar 
 3. restaurant.hbs 可以复用
 
->>>>>>> 4083272bf6b3987cd6c6eac34879711cf51549f0
 ---
 
 1. routes design
@@ -45,8 +42,4 @@ Usage:
 
     1.6 POST  '/comments/:id'   --> commentsRouter 
         redirect('back')
-<<<<<<< HEAD
         this router should be blocked if the user is not logged in. And show the message.
-=======
-        this router should be blocked if the user is not logged in. And show the message.
->>>>>>> 4083272bf6b3987cd6c6eac34879711cf51549f0

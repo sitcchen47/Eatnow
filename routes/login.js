@@ -10,10 +10,6 @@ module.exports = function(app, passport) {
     
     //show home page
     app.get('/', async function(req, res, next) {
-<<<<<<< HEAD
-        res.render('index', { 
-            title: 'EatNow',
-=======
         let itRests = await Restaurants.find({"tag": "Italian"});
         let cnRests = await Restaurants.find({"tag": "Chinese"});
         // console.log(cnRests);
@@ -27,7 +23,6 @@ module.exports = function(app, passport) {
             inRests,
             loginMessage: req.flash('loginMessage'),
             SignupMessage: req.flash('signupMessage'),
->>>>>>> 4083272bf6b3987cd6c6eac34879711cf51549f0
             partial: 'main-script'
         });
     });
@@ -37,24 +32,6 @@ module.exports = function(app, passport) {
         req.logout();
         res.redirect('/');
     });
-<<<<<<< HEAD
-
-    //profile
-    app.get('/profile', isLoggedIn, async function(req, res) {
-        try{
-            res.render('profile', {user : req.user});
-        }catch(e){
-            console.log(e);
-            res.redirect('/');
-        }
-    });
-
-    //login
-    app.get('/login', function(req, res) {
-        res.render('login', { message: req.flash('loginMessage') });
-    });
-=======
->>>>>>> 4083272bf6b3987cd6c6eac34879711cf51549f0
     
     // log in
     app.post("/login", passport.authenticate('login', {
@@ -70,16 +47,4 @@ module.exports = function(app, passport) {
         failureRedirect : '/', 
         failureFlash : true
     }));
-<<<<<<< HEAD
-
-}
-
-// route middleware to ensure user is logged in
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
-        return next();
-    else 
-        res.redirect('/login');
-=======
->>>>>>> 4083272bf6b3987cd6c6eac34879711cf51549f0
 }
