@@ -72,4 +72,26 @@ module.exports = {
     Users,
     Restaurants,
     Reviews
+<<<<<<< HEAD
 };
+=======
+};
+
+// let seller1 = new Sellers({
+//     name: "hhhhhhhh",
+//     hashedPassword: "fdfasdf",
+//     createDate: new Date()
+// });
+// async function run() {
+//     await seller1.save();
+//     // console.log(await Sellers.find({}));
+// }
+// run();
+
+// async function test() {
+//     Sellers.findById("5adfa8adfd4ac49a665c9f9a", (err, seller) => {
+//         console.log(seller);
+//     });
+// }
+// test();
+>>>>>>> 4083272bf6b3987cd6c6eac34879711cf51549f0

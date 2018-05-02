@@ -9,3 +9,36 @@ a {
 .hidden {
   display:none;
 }
+#nav-header {
+  width: 15%;
+}
+
+#sidebar {
+  width: 10%;
+
+  position: fixed;
+  z-index: 1;
+  top: 23%;
+  left: 2.5%;
+}
+
+.main {
+  margin-left: 15%;
+}
+
+.rests-item {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.restaurant-name {
+  font-family: Bradley Hand, cursive;
+  color: red;
+}
+
+/* #list-item-1, #list-item-2, #list-item-3, #list-item-4 {
+  margin-top: 79px;
+} */
+.blank-content {
+  height: 85px;
+}
