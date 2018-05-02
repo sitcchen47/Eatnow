@@ -1,17 +1,18 @@
 var router = require('express').Router();
 var DataModel = require('./model');
 var Restaurants = DataModel.Restaurants;
+var Middlewares = require('../config/middleware');
 
 var profileRouter = require("./profile");
 
 module.exports = function(app, passport) {
-    app.use('/profile', profileRouter);
+    app.use('/profile', Middlewares.isLoggedin, profileRouter);
     
     //show home page
     app.get('/', async function(req, res, next) {
         let itRests = await Restaurants.find({"tag": "Italian"});
         let cnRests = await Restaurants.find({"tag": "Chinese"});
-        console.log(cnRests);
+        // console.log(cnRests);
         let usRests = await Restaurants.find({"tag": "American"});
         let inRests = await Restaurants.find({"tag": "Indian"});
         res.render('index', { 
@@ -20,6 +21,8 @@ module.exports = function(app, passport) {
             cnRests,
             usRests,
             inRests,
+            loginMessage: req.flash('loginMessage'),
+            SignupMessage: req.flash('signupMessage'),
             partial: 'main-script'
         });
     });
@@ -30,11 +33,6 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
-    //profile
-    app.get('/profile', isLoggedIn, async function(req, res) {
-        res.render('profile');
-    });
-
     //login
     app.get('/login', function(req, res) {
         res.render('login', { message: req.flash('loginMessage') });
@@ -42,7 +40,7 @@ module.exports = function(app, passport) {
     
     app.post("/login", passport.authenticate('login', {
         successRedirect: '/profile',
-        failureRedirect: '/login',
+        failureRedirect: '/',
         failureFlash: true
     }));
 
@@ -56,13 +54,4 @@ module.exports = function(app, passport) {
         failureRedirect : '/signup', 
         failureFlash : true
     }));
-
-}
-
-// route middleware to ensure user is logged in
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated())
-        return next();
-
-    res.redirect('/login');
 }
