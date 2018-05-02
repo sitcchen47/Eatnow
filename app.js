@@ -55,9 +55,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //passport
 app.use(session({
+    // production should add persistent storage
   secret: 'ilovescotchscotchyscotchscotch', // session secret
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+      maxAge: 1000 * 60 * 10 // 10 minutes
+  }
 }));
 
 app.use(flash());

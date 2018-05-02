@@ -22,13 +22,13 @@ module.exports = function(passport) {
     // 存到 session 中的是用户的 id）。在这里的 user 应为我们之前在 new
     // LocalStrategy (fution() { ... }) 中传递到回调函数 done 的参数 user 对象（从数据// 库中获取到的）
     passport.serializeUser(function(user, done) {
-        done(null, user._id);
+        done(null, user.name);
     });
     
     // deserializeUser 在每次请求的时候将会根据用户名读取 从 session 中读取用户的全部数据
     // 的对象，并将其封装到 req.user      
-    passport.deserializeUser(function(id, done) {
-        users.findById(id, function(err, user) {
+    passport.deserializeUser(function(username, done) {
+        users.findOne({name: username}, function(err, user) {
             done(err, user);
         });
     });
