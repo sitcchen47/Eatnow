@@ -23,7 +23,7 @@ module.exports = function(app, passport) {
             inRests,
             user: req.user,
             loginMessage: req.flash('loginMessage'),
-            SignupMessage: req.flash('signupMessage'),
+            signupMessage: req.flash('signupMessage'),
             partial: 'main-script'
         });
     });
