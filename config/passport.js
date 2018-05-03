@@ -64,8 +64,9 @@ module.exports = function(passport) {
                     users.findOne({ name: username }, function(err, user) {
                          if(err) { return done(err); }
                          if(!user) { 
-                             //create the user 
-                             const s = req.body.radio[0].checked;
+                             //create the user
+                             //  console.log(req.body.radio); 
+                             //  const s = req.body.radio[0].checked;
                              var newUser = new users({
                                 name: username,
                                 hashedPassword: generateHash(password),
