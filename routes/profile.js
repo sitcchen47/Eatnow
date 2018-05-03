@@ -41,6 +41,7 @@ router.get('/deleteRes/:id', async function(req, res) {
 
 router.post('/upload', upload.single('restaurantPic'), async function (req, res) {
     const {rname, tag, phoneNum, website, address1, address2, city, state, zipcode} = req.body;
+    console.log(req.body);
     // validation()
 
     // store to the database
