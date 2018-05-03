@@ -15,9 +15,8 @@ router.get('/', async function (req, res) {
     // if the loggedIn user is sellers
     let rests  = await Restaurants.find({});
     res.render('snippets/profile', {
-        user: {
-            isSeller: true
-        },
+        user: req.user,
+        isSeller: true,
         rests: rests,
         partial: "addRestaurant-script"
     });
@@ -58,6 +57,7 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
         editDate: new Date()
     });
     await rest.save();
+
     // show on the page
     res.render('snippets/restaurants', {
         layout: null,
