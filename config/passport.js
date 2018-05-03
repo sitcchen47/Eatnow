@@ -22,13 +22,13 @@ module.exports = function(passport) {
     // 存到 session 中的是用户的 id）。在这里的 user 应为我们之前在 new
     // LocalStrategy (fution() { ... }) 中传递到回调函数 done 的参数 user 对象（从数据// 库中获取到的）
     passport.serializeUser(function(user, done) {
-        done(null, user._id);
+        done(null, user.name);
     });
     
     // deserializeUser 在每次请求的时候将会根据用户名读取 从 session 中读取用户的全部数据
     // 的对象，并将其封装到 req.user      
-    passport.deserializeUser(function(id, done) {
-        users.findById(id, function(err, user) {
+    passport.deserializeUser(function(username, done) {
+        users.findOne({name: username}, function(err, user) {
             done(err, user);
         });
     });
@@ -43,7 +43,7 @@ module.exports = function(passport) {
         process.nextTick(function(){
                  users.findOne({name: username }, function(err, user) {
                  if(err) { return done(err);} 
-                 if(!user) { return done(null, false, req.flash('loginMessage', 'No users found.'));}
+                 if(!user) { return done(null, false, req.flash('loginMessage', 'No users found. Sign up an account.'));}
                  if(!bcrypt.compareSync(password, user.hashedPassword)) 
                     { return done(null, false, req.flash('loginMessage', 'Wrong password.'));}                
                  return done(null, user);
@@ -64,8 +64,9 @@ module.exports = function(passport) {
                     users.findOne({ name: username }, function(err, user) {
                          if(err) { return done(err); }
                          if(!user) { 
-                             //create the user 
-                             const s = req.body.radio[0].checked;
+                             //create the user
+                             //  console.log(req.body.radio); 
+                             //  const s = req.body.radio[0].checked;
                              var newUser = new users({
                                 name: username,
                                 hashedPassword: generateHash(password),
