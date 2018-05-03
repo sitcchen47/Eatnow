@@ -42,7 +42,6 @@ module.exports = function(app, passport) {
     }));
 
     // sign up
-
     app.post('/signup', passport.authenticate('signup', {
         successRedirect : '/profile', 
         failureRedirect : '/', 

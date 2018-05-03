@@ -55,12 +55,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //passport
 app.use(session({
-<<<<<<< HEAD
   secret: 'CS546_RocketTeam', // session secret
-=======
-    // production should add persistent storage
-  secret: 'ilovescotchscotchyscotchscotch', // session secret
->>>>>>> 4e3534e6d25c462be37545ab1ee8973ebf325942
   resave: true,
   saveUninitialized: true,
   cookie: {
