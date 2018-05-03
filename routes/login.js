@@ -6,8 +6,9 @@ var Middlewares = require('../config/middleware');
 var profileRouter = require("./profile");
 
 module.exports = function(app, passport) {
-    app.use('/profile', Middlewares.isLoggedin, profileRouter);
-    
+    app.get('/profile', async function(req, res) {
+        res.render('profile');
+    });
     //show home page
     app.get('/', async function(req, res, next) {
         let itRests = await Restaurants.find({"tag": "Italian"});
