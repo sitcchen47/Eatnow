@@ -43,7 +43,7 @@ module.exports = function(passport) {
         process.nextTick(function(){
                  users.findOne({name: username }, function(err, user) {
                  if(err) { return done(err);} 
-                 if(!user) { return done(null, false, req.flash('loginMessage', 'No users found.'));}
+                 if(!user) { return done(null, false, req.flash('loginMessage', 'No users found. Sign up an account.'));}
                  if(!bcrypt.compareSync(password, user.hashedPassword)) 
                     { return done(null, false, req.flash('loginMessage', 'Wrong password.'));}                
                  return done(null, user);

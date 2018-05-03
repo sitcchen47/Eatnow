@@ -1,62 +1,22 @@
 [
 	 {
 		"_id": "001",
-		"name": "Chengdu 1",
-		"address": "30 bay street, 07100",
-		"contact info": {
-			"phoneNum": "919-010-1234",
-			"website": "www.No1chengdu.com"
+		"name": "Jing Fong Chinatown",
+		"tag" : "Chinese",
+		"address": "20 Elizabeth St, New York, NY 10013",
+		"contactInfo": {
+			"phoneNum": "(212) 964-5256",
+			"website": "http://jingfongny.com/"
 		},
-		"imgURL" : "ii/kk",
-		"Dishes":[
-			{
-				"_id": "0000001",
-				"title": "Chocolate Lava",
-				"calories" : 350,
-				"image_url" : "../xx"
-			},
-			{
-				"_id": "0000002",
-				"title": "Chocolate Lava",
-				"calories" : 350,
-				"image_url" : "../xx"
-			},
-			{
-				"_id": "0000003",
-				"title": "Chocolate Lava",
-				"calories" : 350,
-				"image_url" : "../xx"
-			}
-		]
-	},
-	{
-		"_id": "002",
-		"name": "Chengdu 1",
-		"address": "30 bay street, 07100",
-		"contact info": {
-			"phoneNum": "919-010-1234",
-			"website": "www.No1chengdu.com"
+		"imgURL": "2.jpg",
+		"Dishes": {
+			"_id": "001",
+			"title": "Chocolate Lava",
+			"calories": "350",
+			"imgURL": "d2.jpg"
 		},
-		"imgURL" : "ii/kk",
-		"Dish":[
-			{
-				"_id": "0000001",
-				"title": "Chocolate Lava",
-				"calories" : 350,
-				"image_url" : "../xx"
-			},
-			{
-				"_id": "0000002",
-				"title": "Chocolate Lava",
-				"calories" : 350,
-				"image_url" : "../xx"
-			},
-			{
-				"_id": "0000003",
-				"title": "Chocolate Lava",
-				"calories" : 350,
-				"image_url" : "../xx"
-			}
-		]
+		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9636.570056328697!2d-74.00179918731911!3d40.71461653430524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27a4786b25%3A0x1181c2aa6ceec015!2sJing+Fong+Chinatown!5e0!3m2!1sen!2sus!4v1525373395021\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
+		"createDate": "05/01/2014",
+		"editDate": ""	
 	}
 ]
