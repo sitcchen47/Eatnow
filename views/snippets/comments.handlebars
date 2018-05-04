@@ -24,14 +24,14 @@
     </div>
     <div class="row dishSection">
         {{#each rest.dishes}}
-            <div class="card dish-item">
+            <div class="card dish-item mr-sm-3">
                 <img class="card-img-top" src="/images/{{this.imgURL}}" alt="{{this.name}}">
                 <div class="card-body">
                     <h5 class="card-title">{{this.name}}</h5>
                     <p class="card-text">Calories: {{this.calories}}</p>
                 </div>
             </div>
-        {{/each}}
+        {{/each}} 
     </div>
     <div class="row commentsSection">
         {{#each comments}}

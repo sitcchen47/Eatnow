@@ -62,25 +62,25 @@ module.exports = function(passport) {
                  // if the user is not already logged in:
                  if(!req.user) {
                     users.findOne({ name: username }, function(err, user) {
-                         if(err) { return done(err); }
-                         if(!user) { 
-                             //create the user
-                             //  console.log(req.body.radio); 
-                             //  const s = req.body.radio[0].checked;
-                             var newUser = new users({
-                                name: username,
-                                hashedPassword: generateHash(password),
-                                isSeller: req.body.radio === "Seller",
-                                createDate: new Date()
-                             });
-                            
-                             newUser.save(function(err) {
-                                 if(err) return done(err);
-                                 return done(null, newUser);
-                             })
-                         } else {
-                                return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
-                         }
+                        if(err) { return done(err); }
+                        if(!user) { 
+                        //create the user
+                        //  console.log(req.body.radio); 
+                        //  const s = req.body.radio[0].checked;
+                        var newUser = new users({
+                        name: username,
+                        hashedPassword: generateHash(password),
+                        isSeller: req.body.radio === "Seller",
+                        createDate: new Date()
+                        });
+                    
+                        newUser.save(function(err) {
+                            if(err) return done(err);
+                            return done(null, newUser);
+                        })
+                        } else {
+                            return done(null, false, req.flash('signupMessage', 'That username is already taken.'));
+                        }
                     });
                  }
                  else {
