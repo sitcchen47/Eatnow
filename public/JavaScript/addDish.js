@@ -3,6 +3,7 @@
     var imgSection = $('#imgSection');
     var triggerButton = $('.trigger');
     var id = $('#restId').text();
+
     triggerButton.click(function(event) {
         $('#dishForm').toggleClass('hidden');
     });
@@ -28,4 +29,6 @@
             }
         });
     });
+
+    $('#mapString').html($('#mapString').text());
 })(window.jQuery);

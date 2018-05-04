@@ -5,6 +5,8 @@ var DataModel = require('./model');
 var fs = require('fs-extra');
 var path = require("path");
 
+// var createEle = require('../public/JavaScript/createEle');
+
 var Restaurants = DataModel.Restaurants;
 
 var upload = multer({
@@ -67,7 +69,7 @@ router.post('/uploadDish/:id', upload.single('dishPic'), async function(req, res
 });
 
 router.post('/upload', upload.single('restaurantPic'), async function (req, res) {
-    const {rname, tag, phoneNum, website, address1, address2, city, state, zipcode} = req.body;
+    const {rname, tag, phoneNum, website, address1, address2, city, state, zipcode, map} = req.body;
     // console.log(req.body);
     // validation()
 
@@ -77,6 +79,7 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
         name: rname,
         tag: tag,
         address: {address1, address2, city, state, zipcode},
+        map: map,
         contactInfo: {
             phoneNum, website
         },
@@ -94,7 +97,8 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
         tag: rest.tag,
         address: rest.address,
         contactInfo: rest.contactInfo,
-        imgURL: rest.imgURL
+        imgURL: rest.imgURL,
+        map: rest.map
     });
 });
 

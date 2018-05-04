@@ -6,14 +6,19 @@
         <h5 class="restaurant-name"> {{rest.name}} </h5>   
         <div class="sr-only" id="restId">{{ rest._id }} </div>                   
         <div class="row">
-            <div id="imgSection" class="col-sm-9">
-                <img src="/images/{{rest.imgURL}}" alt="" class="w-50">
-
-                {{#each rest.dishes}}
-                    <img src="/images/{{imgURL}}" alt="" class="w-25">
-                {{/each}}
+            <div id="imgSection" class="col-sm-6">
+                <div class="row">
+                    <img src="/images/{{rest.imgURL}}" alt="" class="w-50 h-50">
+                    <p class="ml-3">评分</p>
+                </div>
+                <div class="restDishes">
+                    <h5 class="restaurant-name my-3"> Dishes </h5>
+                    {{#each rest.dishes}}
+                        <img src="/images/{{imgURL}}" alt="" class="w-25">
+                    {{/each}}
+                </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <address>
                     <span> {{ rest.address.address1 }}</span><br>
                     <span> {{ rest.address.address2 }} </span> <br>
@@ -25,6 +30,9 @@
                     <span>{{ rest.contactInfo.phoneNum}}</span> <br>
                     <a href="http://{{ rest.contactInfo.website }}">{{ rest.contactInfo.website }}</a>
                 </div>
+            </div>
+            <div id="mapString" class="col-sm-4">
+                {{ rest.map }}
             </div>
         </div>
         <button class="btn btn-primary my-3 trigger">Add a Dish</button>

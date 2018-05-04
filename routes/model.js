@@ -25,7 +25,7 @@ const Restaurants = mongoose.model("Restaurants", {
         state: String,
         zipcode: String
     },
-    map: String,
+    map: Object,
     contactInfo: {
         "phoneNum": String,
         "website": String,
