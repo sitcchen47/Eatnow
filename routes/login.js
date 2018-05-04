@@ -4,11 +4,10 @@ var Restaurants = DataModel.Restaurants;
 var Middlewares = require('../config/middleware');
 
 var profileRouter = require("./profile");
-
+var restaurantsRouter = require('./restaurants');
 module.exports = function(app, passport) {
-    app.get('/profile', async function(req, res) {
-        res.render('profile');
-    });
+    app.use('/profile', Middlewares.isLoggedin, profileRouter);
+    app.use('/restaurants', restaurantsRouter);
     //show home page
     app.get('/', async function(req, res, next) {
         let itRests = await Restaurants.find({"tag": "Italian"});
@@ -16,6 +15,12 @@ module.exports = function(app, passport) {
         // console.log(cnRests);
         let usRests = await Restaurants.find({"tag": "American"});
         let inRests = await Restaurants.find({"tag": "Indian"});
+        
+        // console.log(req.flash('loginMessage'));
+        // console.log(req.flash('LoginError'));
+        let loginMessage = req.flash('loginMessage').length !== 0 ? req.flash('loginMessage') : req.flash('LoginError');
+        // console.log(loginMessage);
+        
         res.render('index', { 
             title: 'Express',
             itRests,
@@ -23,7 +28,7 @@ module.exports = function(app, passport) {
             usRests,
             inRests,
             user: req.user,
-            loginMessage: req.flash('loginMessage'),
+            loginMessage,
             signupMessage: req.flash('signupMessage'),
             partial: 'main-script'
         });

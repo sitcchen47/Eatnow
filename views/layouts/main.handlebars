@@ -85,7 +85,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div id="nav-header" class="text-center">
-      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="60">
+      <a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="400" height="60">
         <defs>
           <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
@@ -98,7 +98,7 @@
               fill="url(#grad1)">
           EatNow
         </text>
-      </svg>
+      </svg></a>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -130,7 +130,7 @@
 
       {{#if user }}
       <form action="" class="form-inline my-2 my-lg-0">
-        <button class="btn btn-success mr-sm-2"><span> {{ user.name }}</span></button>
+        <button class="btn btn-success mr-2"><span> {{ user.name }}</span></button>
         <button class="btn mr-sm-2"><a href="/logout">Log out</a></button>
       </form>
       {{else}}
@@ -149,11 +149,9 @@
   {{{body}}}
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
-
   <script>
     (function($) {
       // 1. preventFormSubmission
