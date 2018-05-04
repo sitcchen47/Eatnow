@@ -17,6 +17,8 @@ const Users = mongoose.model("Users", {
 const Restaurants = mongoose.model("Restaurants", {
     name: String,
     tag: String,
+    owner : String,
+    map : String,
     address: {
         address1: String,
         address2: String,
