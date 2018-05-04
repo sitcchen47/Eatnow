@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/Eatnow");
+mongoose.connect("mongodb://localhost/EatnowTest");
 mongoose.Promise = Promise;
 
 const Users = mongoose.model("Users", {
@@ -17,8 +17,7 @@ const Users = mongoose.model("Users", {
 const Restaurants = mongoose.model("Restaurants", {
     name: String,
     tag: String,
-    owner : String,
-    map : String,
+    owner: String,
     address: {
         address1: String,
         address2: String,
@@ -26,28 +25,37 @@ const Restaurants = mongoose.model("Restaurants", {
         state: String,
         zipcode: String
     },
+    map: Object,
     contactInfo: {
         "phoneNum": String,
         "website": String,
     },
     imgURL: String,
-    Dishes: {
-        "_id": String,
-        title: String,
-        calories: Number,
-        imgURL: String
-    },
+    dishes: [{
+        name: String,
+        calories: String,
+        imgURL: String,
+        createDate: Date,
+        editDate: Date
+    }], // Dish _id
     createDate: Date,
     editDate: Date
 });
 
-const Reviews = mongoose.model("Reviesws", {
-    belongtoRestaurants: String, // restaurant._id
-    belongtoCustomers: String, // customer._id
+// const Dishes = mongoose.model("Dishes", {
+//     calories: String,
+//     imgURL: String,
+//     createDate: Date,
+//     editDate: Date
+// });
+
+const Reviews = mongoose.model("Reviews", {
+    belongtoRestaurant: String, // restaurant._id
+    peopleWhoComment: String, // customer._id
+    isSeller: Boolean,
     content: String,
     createDate: Date
 });
-
 
 module.exports = {
     Users,

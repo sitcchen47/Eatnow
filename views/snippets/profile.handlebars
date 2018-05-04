@@ -110,6 +110,10 @@
                     <label for="inputZip">Zip</label>
                     <input type="text" class="form-control" id="inputZip" name="zipcode" required>
                 </div>
+                <div class="form-group">
+                    <label for="GoogleMap">Embed Google Map (optional)</label>
+                    <textarea name="map" id="GoogleMap" class="form-control" placeholder="<iframe>...</iframe>"></textarea>
+                </div>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit Form</button>
@@ -145,7 +149,7 @@
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary view-btn">View</button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary view-btn"><a href="/profile/view/{{ _id }}">View</a></button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary edit-btn">Edit</button>
                                         <button type="button" class="btn btn-sm btn-outline-secondary delete-btn">Delete</button>
                                     </div>

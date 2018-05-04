@@ -11,10 +11,10 @@
             <h4 class="mb-5">Italian Style Restaurants</h4>
             {{#each itRests}}
                 <div class="rests-item py-2">
-                    <h5 class="restaurant-name"> {{name}} </h5>
+                    <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>
                     <div class="row">
                         <div class="col-sm-9">
-                            <img src="/images/{{this.imgURL}}" alt="" class="w-50">
+                            <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
                         </div>
                         <div class="col-sm-3">
                             <address>
@@ -38,10 +38,10 @@
             <h4 class="mb-5">Chinese Style Restaurants</h4>
             {{#each cnRests}}
                 <div class="rests-item py-2">
-                    <h5 class="restaurant-name"> {{name}} </h5>              
+                    <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>              
                     <div class="row">
                         <div class="col-sm-9">
-                            <img src="/images/{{this.imgURL}}" alt="" class="w-50">
+                            <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
                         </div>
                         <div class="col-sm-3">
                             <address>
@@ -63,10 +63,10 @@
             <h4 class="mb-5">American Style Restaurants</h4>
             {{#each usRests}}
                 <div class="rests-item py-2">
-                    <h5 class="restaurant-name"> {{name}} </h5>           
+                    <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>           
                     <div class="row">
                         <div class="col-sm-9">
-                            <img src="/images/{{this.imgURL}}" alt="" class="w-50">
+                            <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
                         </div>
                         <div class="col-sm-3">
                             <address>
@@ -88,10 +88,10 @@
             <h4 class="mb-5">Indian Style Restaurants</h4>
             {{#each inRests}}
                 <div class="rests-item py-2">
-                    <h5 class="restaurant-name"> {{name}} </h5>                
+                    <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>                
                     <div class="row">
                         <div class="col-sm-9">
-                            <img src="/images/{{this.imgURL}}" alt="" class="w-50">
+                            <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
                         </div>
                         <div class="col-sm-3">
                             <address>
