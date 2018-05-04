@@ -50,8 +50,9 @@ const Restaurants = mongoose.model("Restaurants", {
 // });
 
 const Reviews = mongoose.model("Reviews", {
-    belongtoRestaurants: String, // restaurant._id
-    belongtoCustomers: String, // customer._id
+    belongtoRestaurant: String, // restaurant._id
+    peopleWhoComment: String, // customer._id
+    isSeller: Boolean,
     content: String,
     createDate: Date
 });
