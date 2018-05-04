@@ -32,6 +32,7 @@ const Restaurants = mongoose.model("Restaurants", {
     },
     imgURL: String,
     dishes: [{
+        name: String,
         calories: String,
         imgURL: String,
         createDate: Date,

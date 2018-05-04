@@ -1,0 +1,51 @@
+
+<div class="container mt-3">
+    {{#if user}}
+    <div class="py-2">
+        {{#if rest}}
+        <h5 class="restaurant-name"> {{rest.name}} </h5>   
+        <div class="sr-only" id="restId">{{ rest._id }} </div>                   
+        <div class="row">
+            <div id="imgSection" class="col-sm-9">
+                <img src="/images/{{rest.imgURL}}" alt="" class="w-50">
+
+                {{#each rest.dishes}}
+                    <img src="/images/{{imgURL}}" alt="" class="w-25">
+                {{/each}}
+            </div>
+            <div class="col-sm-3">
+                <address>
+                    <span> {{ rest.address.address1 }}</span><br>
+                    <span> {{ rest.address.address2 }} </span> <br>
+                    <span> {{ rest.address.city }} </span>
+                    <span> {{ rest.address.state }} </span>
+                    <span> {{ rest.address.zipcode }} </span> <br>
+                </address>
+                <div class="contact-info">
+                    <span>{{ rest.contactInfo.phoneNum}}</span> <br>
+                    <a href="http://{{ rest.contactInfo.website }}">{{ rest.contactInfo.website }}</a>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary my-3 trigger">Add a Dish</button>
+        <form id="dishForm" class="needs-validation hidden" enctype="multipart/form-data" method="POST" novalidate> 
+            <div class="form-group">
+                <label for="dishName">Dish name</label>
+                <input type="text" class="form-control" id="dishName" name="name" placeholder="Hunan Chicken" required>
+            </div>
+            <div class="form-group">
+                <label for="dishPic">Picture</label>
+                <input type="file" class="form-control-file" id="dishPic" name="dishPic" required>
+            </div>
+
+            <div class="form-group">
+                <label for="calories">Calories</label>
+                <input type="text" name="calories" id="calories" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </form>
+        {{/if}}
+    </div>
+    {{/if}}
+</div>
