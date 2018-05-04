@@ -25,7 +25,7 @@ const Restaurants = mongoose.model("Restaurants", {
         state: String,
         zipcode: String
     },
-    map: Object,
+    map: String,
     contactInfo: {
         "phoneNum": String,
         "website": String,
@@ -50,8 +50,8 @@ const Restaurants = mongoose.model("Restaurants", {
 // });
 
 const Reviews = mongoose.model("Reviews", {
-    belongtoRestaurant: String, // restaurant._id
-    peopleWhoComment: String, // customer._id
+    belongtoRestaurant: String, // restaurant.name
+    peopleWhoComment: String, // customer.name
     isSeller: Boolean,
     content: String,
     createDate: Date

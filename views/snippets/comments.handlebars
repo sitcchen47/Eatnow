@@ -1,5 +1,50 @@
-{{#each comments}}
-    <p> {{ createDate }}</p>
-    <p mb-2>{{ content }}</p>
-    <hr>
-{{/each}}
+<div class="container mt-3">
+    <div class="rest row">
+        <div class="col-sm-4">
+            <img src="/images/{{rest.imgURL}}" alt="" class="w-100 h-75">
+        </div>
+        <div class="col-sm-4 info">
+            <div class="w-100 h-75">
+                <address>
+                    <span> {{ rest.address.address1 }}</span><br>
+                    <span> {{ rest.address.address2 }} </span> <br>
+                    <span> {{ rest.address.city }} </span>
+                    <span> {{ rest.address.state }} </span>
+                    <span> {{ rest.address.zipcode }} </span> <br>
+                </address>
+                <div class="contact-info">
+                    <span>{{ rest.contactInfo.phoneNum}}</span> <br>
+                    <a href="http://{{ rest.contactInfo.website }}">{{ rest.contactInfo.website }}</a>
+                </div>
+            </div>
+        </div>
+        <div id="mapString" class="col-sm-4">
+            {{ rest.map }}
+        </div>
+    </div>
+    <div class="row dishSection">
+        {{#each rest.dishes}}
+            <div class="card dish-item">
+                <img class="card-img-top" src="/images/{{this.imgURL}}" alt="{{this.name}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <p class="card-text">Calories: {{this.calories}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="row commentsSection">
+        {{#each comments}}
+            <div class="comment-item row">
+                <div class="col-4">
+                    <div class="row">{{ this.peopleWhoComment }}</div>
+                    <div class="row">{{ this.createDate }}</div>
+                    <div class="row">{{ this.isSeller }}</div>
+                </div>
+                <div class="col-8">
+                    <p>{{ this.content}}</p>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
