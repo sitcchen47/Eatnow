@@ -52,15 +52,15 @@
                 {{/if}}
                 <div class="form-group">
                     <label for="signup-name">Username</label>
-                    <input id = "signup-name" type="text" class="form-control" name="name">
+                    <input id = "signup-name" type="text" class="form-control" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="signup-psd">Password</label>
-                    <input id = "signup-psd"type="password" class="form-control" name="password">
+                    <input id = "signup-psd"type="password" class="form-control" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label for="confirm-psd">Confirm</label>
-                    <input id = "confirm-psd" type="password" class="form-control" name="confirm-psd">
+                    <label for="confirmPsd">Confirm</label>
+                    <input id = "confirmPsd" type="password" class="form-control" name="confirmPsd" required>
                 </div>
                 <div class="row mb-3">
                     <label for="SellerRadio" class="col-sm-6">
@@ -152,6 +152,9 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+  <script src="/JavaScript/form-validation/loginForm.js"></script>
+  <script src="/JavaScript/form-validation/signupForm.js"></script>
   <script>
     (function($) {
       // 1. preventFormSubmission
@@ -203,73 +206,7 @@
       }
     })(window.jQuery);
   </script>
-  <script>
-    $().ready(function(){
-      $("#signupForm").validate({
-          rules: {
-              name: {
-                  required: true,
-                  minlength: 2,
-                  isUsername: true
-              },
-              password: {
-                  required: true,
-                  minlength: 6
-              },
-              confirm-psd: {
-                  required: true,
-                  minlength: 6,
-                  equalTo: "#password"
-              },
-              messages: {
-                  name: {
-                      required: "Please enter a username",
-                      minlength: "Your username must be at least two characters"
-                  },
-                  password: {
-                      required: "Please provide a password",
-                      minlength: "Your password must at least 6 characters long"
-                  },
-                  confirm-psd: {
-                      required: "Please provide a password",
-                      minlength: "Your password must at least 6 characters long",
-                      equalTo: "Please enter the same password as above"
-                  }
-              }
-          }
-      });
-      $("#loginForm").validate({
-          rules: {
-              name: {
-                  required: true,
-                  minlength: 2
-              },
-              password: {
-                  required: true,
-                  minlength: 6
-              }
-          },
-          messages: {
-              name: {
-                  required: "Please enter a username",
-                  minlength: "Your username must be at least two characters"
-              },
-              password: {
-                  required: "Please provide a password",
-                  minlength: "Your password must at least 6 characters long"
-              }
-          }
-      });
-      $(':checkbox[type="checkbox"]').each(function(){  
-          $(this).click(function(){
-              if($(this).attr("checked") != undefined){
-                  $(this).siblings().attr("check", false);
-                  $(this).attr("checked", true);
-              }
-          });
-      });
-  });
-  </script>
+
   {{> (lookup . 'partial') }}
 </body>
 </html>
