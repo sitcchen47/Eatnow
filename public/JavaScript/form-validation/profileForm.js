@@ -34,24 +34,7 @@ $().ready(function(){
             rname: {
                 required: "Please enter your restaurant name",
                 minlength: "Your restaurant name must consist of at least two characters"
-            },
-            website: {
-                isWebsite: "The website is invalid"
-            },
-            phoneNum: {
-                required: "Please enter phone number",
-                isPhone: "The phone number is invalid"
-            },
-            address1: {
-                required: "Please enter restaurant street",
-                isStreet: "The street is invalid"
-            },
-            city: {
-                required: "Please enter restaurant city",
-                isCity: "The city is invalid" 
-            }
-            
-                 
+            }              
         }
     })
     $(':checkbox[type="checkbox"]').each(function(){  
@@ -64,12 +47,12 @@ $().ready(function(){
     });
     //validate website
     jQuery.validator.addMethod("isWebsite", function(value, element) {
-        return this.optional(element) || (/^\w+.com$/.test(value));
+        return this.optional(element) || (/^[w]{3}.\w+.com$/.test(value));
     }, "Please enter a valid website.");
     //validate phone number
     jQuery.validator.addMethod("isPhone", function(value, element) {
         var length = value.length;
-        return this.optional(element) || (/^\d{3}-\d{3}-\d{4}$/.test(value));
+        return this.optional(element) || (/^\(\d{3}\)\d{3}-\d{4}$/.test(value));
     }, "Please enter a valid phone number.");
 
     //validate restaurant address

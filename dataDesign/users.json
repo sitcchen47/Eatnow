@@ -1,0 +1,78 @@
+[	
+    {
+		"name": "Stephen Curry",
+		"hashedPassword" : "$2a$08$cqdk7/NOtfPDCoVj98Rq/OfbxWAId6.8m0W6jDGDsDVVkuoBFsoTC",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+	},
+
+	{
+		"name": "Kevin Durant",
+		"hashedPassword" : "$2a$08$uw5qX7M/zubgmFnJhg46kOgNMcZsnCwz0IjEwGnSjBmN9iCMeKcE.",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+	},
+
+	{
+		"name": "Klay Thompson",
+		"hashedPassword" : "$2a$08$5EYAgnMRGzbZPkQ6VD6fBOZca8ozlXkB3nmgbg7FiHihA4dnxajtq",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+	},
+    {
+		"name": "Draymond Green",
+		"hashedPassword" : "$2a$08$hoQMwEtzvbLQrq0dZZapt.U8c97Bk0rAEK9bdvnPse6JehJ36ECki",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+	},
+
+	{
+		"name": "Andre Iguodala",
+		"hashedPassword" : "$2a$08$mhFmzZi5iLXp5BuX.Q85iuM95IBRobYTbgqUwBqZrOGKxNRfDTRJK",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+	},
+
+	{
+		"name": "Shaun Livingston",
+		"hashedPassword" : "$2a$08$CiA1eBMBhjD/Ubcp/piwXe0X.RDjoqf1Ww6rR5RSubRXQpVc6cm/K",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+    },
+    {
+		"name": "Nick Young",
+		"hashedPassword" : "$2a$08$ypxekM3ilYwBotSBgpyV7ez/s.wOvobEagQ.4K3m38SwmhNSTNfGO",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+	},
+
+	{
+		"name": "Zaza Pachulia",
+		"hashedPassword" : "$2a$08$ko0c4.XfaLAour43lWhAr.QxVXyIv6mJWotlM0HNct8LL2oB9h.kq",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+	},
+
+	{
+		"name": "David West",
+		"hashedPassword" : "$2a$08$dBxAsKPi0f1AR3i68RvO0uobfMMsOEBUpGBdw9.AIKvjBAayyzZYC",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+    },
+    {
+		"name": "JaVale McGee",
+		"hashedPassword" : "$2a$08$vXzORQyLSVxSFiAuCeCbX.HrxCPelVspc3CCuz1OmCm4xlgf27wYe",
+		"isSeller": true,
+        "reviewsID": [], 
+        "restaurantsID" : []     
+    }
+]
