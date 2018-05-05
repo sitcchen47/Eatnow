@@ -15,13 +15,17 @@ var upload = multer({
 
 router.get('/', async function (req, res) {
     // if the loggedIn user is sellers
-    let rests  = await Restaurants.find({});
-    res.render('snippets/profile', {
-        user: req.user,
-        isSeller: true,
-        rests: rests,
-        partial: "addRestaurant-script"
-    });
+    if (req.user.isSeller) {
+        let rests  = await Restaurants.find({});
+        res.render('snippets/profile', {
+            user: req.user,
+            isSeller: true,
+            rests: rests,
+            partial: "addRestaurant-script"
+        });
+    } else {
+        res.redirect('back');
+    }   
 });
 
 router.get('/deleteRes/:id', async function(req, res) {

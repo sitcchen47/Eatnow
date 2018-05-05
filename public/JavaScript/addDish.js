@@ -10,7 +10,6 @@
 
     $('#dishForm').submit(function(event) {
         event.preventDefault();
-        let dishForm = new FormData(event.target);
         $(this).toggleClass('hidden');
 
         // let form = new FormData(event.target);

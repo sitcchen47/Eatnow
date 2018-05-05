@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/EatnowTest");
+mongoose.connect("mongodb://localhost/Eatnow");
 mongoose.Promise = Promise;
 
 const Users = mongoose.model("Users", {

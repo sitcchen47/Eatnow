@@ -7,11 +7,17 @@ var Comments = DataModel.Reviews;
 
 var Middlewares = require("../config/middleware");
 
+var getDate = require('../util/getDate').getDif;
+
 router.get('/get/:id', async function(req, res) {
     let id = req.params.id;
     let rest = await Restaurants.findById(id);
 
     let comments = await Comments.find({belongtoRestaurant: rest.name});
+    for (let comment of comments) {
+        comment.time = getDate(comment.createDate);
+    }
+    
     res.render('snippets/comments', {
         user: req.user,
         rest,
@@ -22,10 +28,10 @@ router.get('/get/:id', async function(req, res) {
 
 router.post('/post/:id', Middlewares.isLoggedin, async function(req, res) {
     let id = req.params.id;
-    let rest = await Restaurants.findById(id);
-
-    console.log("aaa");
     let { content } = req.body;
+
+    let rest = await Restaurants.findById(id.trim());
+
     let comment = new Comments({
         belongtoRestaurant: rest.name,
         peopleWhoComment: req.user.name,
@@ -33,7 +39,10 @@ router.post('/post/:id', Middlewares.isLoggedin, async function(req, res) {
         content,
         createDate: new Date()
     });
+
     await comment.save();
+
+    comment.time = getDate(comment.createDate);
     res.render('snippets/comment-section', {
         layout: null,
         comment

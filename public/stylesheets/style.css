@@ -56,3 +56,7 @@ iframe {
 .dish-item {
   width: 18rem;
 }
+
+#commentName {
+  font-size: 1.2rem;
+}

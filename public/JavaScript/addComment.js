@@ -9,29 +9,42 @@
 
     $('#commentForm').submit(function(event) {
         event.preventDefault();
-        $(this).toggleClass('hidden');
 
-        let form = new FormData(event.target);
-        let id = $('#restFlag').text();
-        $.ajax({
-            url: "/restaurants/post/" + id,
-            type: "post",
-            data: form,
-            processData: false,
-            contentType: false,
-            // 3. get the restaurants html and insert into the album element
-            success: function(data) {
-                if (data.redirect) {
-                    window.location.href = data.redirect;
-                } else {
-                    commentsSection.append($(data));
+        if ($('#username').length === 0) {
+            alert('Please sign in your account first!');
+            $('#signin-signup-tab').modal("show");
+            showSigninPage();
+        }
+        else {
+            let id = $('#restFlag').text();
+
+            $(this).toggleClass('hidden');
+
+            $.ajax({
+                url: "/restaurants/post/" + id,
+                type: "post",
+                data: {'content': $('#content').val()},
+                success: function(data) {
+                    commentsSection.append(data);
+                },
+                error: function(e) {
+                    alert('There must be some error!');
                 }
-            },
-            error: function(e) {
-                alert('There must be some error!');
-            }
-        });
+            });
+        }
     });
 
     $('#mapString').html($('#mapString').text());
+
+    function showSigninPage() {
+        $('#signup').removeClass('active');
+        $('#signup').removeClass('show');
+
+        $('#signup-tab').removeClass('active');
+
+        $('#signin').addClass('active');
+        $('#signin').addClass('show');
+
+        $('#signin-tab').addClass('active');
+      }
 })(window.jQuery);

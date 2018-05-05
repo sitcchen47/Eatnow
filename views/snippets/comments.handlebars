@@ -26,31 +26,36 @@
     </div>
     <section>
         <div>
-            <button class="btn btn-primary my-3 trigger">Make a comment</button>
+            <button class="btn btn-primary btn-sm my-3 trigger">Make a comment</button>
         </div>
-        <form id="commentForm" class="needs-validation hidden" enctype="multipart/form-data" method="POST" novalidate> 
-
+        <form id="commentForm" class="hidden"> 
             <div class="form-group">
                 <label for="content" class="sr-only">content</label>
                 <textarea name="content" id="content" class="form-control" placeholder="Put your comment here"></textarea>
             </div>
-
-            <button type="submit" class="btn btn-primary mb-3">Submit Comment</button>
+            <button type="submit" class="btn btn-primary btn-sm mb-3">Submit Comment</button>
         </form>
     </section>
     
-    <div class="row commentsSection">
+    <div class="row commentsSection px-3">
         {{#each comments}}
-            <div class="comment-item row">
-                <div class="col-4">
-                    <div class="row">{{ this.peopleWhoComment }}</div>
-                    <div class="row">{{ this.createDate }}</div>
-                    <div class="row">{{ this.isSeller }}</div>
+            <div class="shadow-sm p-3 mb-5 bg-white rounded w-100">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <span id="commentName" class="font-weight-bold"> {{ this.peopleWhoComment }}</span>&nbsp;&nbsp;
+                        {{#if this.isSeller}} 
+                            <button class="btn btn-secondary btn-sm"> Seller </button>
+                        {{else }}
+                            <button class="btn btn-secondary btn-sm"> Customer </button>
+                        {{/if}}
+                    </div>   
+                    <div class="col-sm-3">
+                        <span class="text-muted"> {{ this.time }}</span> 
+                    </div>
                 </div>
-                <div class="col-8">
-                    <p>{{ this.content}}</p>
-                </div>
-            </div>
+                <hr>
+                <span> {{ this.content }} </span> 
+            <div>
         {{/each}}
     </div>
     <div class="row dishSection">
