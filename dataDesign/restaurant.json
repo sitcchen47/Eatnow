@@ -7,7 +7,7 @@
 		"address": "20 Elizabeth St, New York, NY, 10013",
 		"contactInfo": {
 			"phoneNum": "(212) 964-5256",
-			"website": "http://jingfongny.com/"
+			"website": "www.jingfongny.com/"
 		},
 		"imgURL": "9ea338a3679e53f40638e9078700913b",
 		"Dishes": [
@@ -30,7 +30,7 @@
 		"address" : "18 E Broadway, New York, NY, 10002", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 941-0911", 
-			"website" : "http://www.goldenunicornnyc.com/" 
+			"website" : "www.goldenunicornnyc.com/" 
 		}, 
 		"imgURL" : "a4be8c8a3299e005fbe6f97318cc8d2a", 
 		"Dishes": [
@@ -53,7 +53,7 @@
 		"address" : "13 St Marks Pl, New York, NY, 10003", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 677-5670", 
-			"website" : "http://www.spotdessertbar.com/" 
+			"website" : "www.spotdessertbar.com/" 
 		}, 
 		"Dishes": [
 			{
@@ -76,7 +76,7 @@
 		"address" : "108 W 14th St, New York, NY, 10011", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 206-8388", 
-			"website" : "https://www.auntieguanskitchen-ny.com/" 
+			"website" : "www.auntieguanskitchen-ny.com/" 
 		}, 
 		"Dishes": [
 			{
@@ -99,7 +99,7 @@
 		"address" : "22 W 32nd St, New York, NY, 10001", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 473-2233", 
-			"website" : "http://www.jongrobbqny.com/" 
+			"website" : "www.jongrobbqny.com/" 
 		}, 
 		"Dishes": [
 			{
@@ -122,7 +122,7 @@
 		"address" : "88 Madison Ave, New York, NY, 10016", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 691-0555", 
-			"website" : "http://www.scarpettarestaurants.com/new-york" 
+			"website" : "www.scarpettarestaurants.com/new-york" 
 		}, 
 		"Dishes": [
 			{
@@ -145,7 +145,7 @@
 		"address" : "61 Grove St, New York, NY, 10014", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 242-3699", 
-			"website" : "http://www.tontonnyc.com/" 
+			"website" : "www.tontonnyc.com/" 
 		}, 
 		"Dishes": [
 			{
@@ -168,7 +168,7 @@
 		"address" : "14 Christopher St, New York, NY, 10014", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 367-2067", 
-			"website" : "https://omakaseroom.nyc" 
+			"website" : "www.omakaseroom.nyc" 
 		}, 
 		"Dishes": [
 			{
@@ -192,7 +192,7 @@
 		"address" : "558 Broome St, New York, NY 10013", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 925-3061", 
-			"website" : "http://www.lasirenenyc.com/" 
+			"website" : "www.lasirenenyc.com/" 
 		}, 
 		"Dishes": [
 			{
@@ -215,7 +215,7 @@
 		"address" : "181 West 4th Street, New York, NY, 10014", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 989-5440", 
-			"website" : "http://www.ramenya.nyc/" 
+			"website" : "www.ramenya.nyc/" 
 		}, 
 		"Dishes": [
 			{
