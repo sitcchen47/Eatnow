@@ -21,7 +21,7 @@ for(let u of usersData) {
     });
 }
 
-for(let r of restaurantsData) {
+for(let r of restaurantsData) {    
     var addr = r.address.split(',');
     if(addr.length === 4) {
         addr.splice(1, 0, "");
@@ -40,6 +40,7 @@ for(let r of restaurantsData) {
             phoneNum: r.contactInfo.phoneNum,
             website: r.contactInfo.website
         },
+        dishes : r.Dishes,
         imgURL: r.imgURL,
         map : r.map,
         createDate: r.createDate,
