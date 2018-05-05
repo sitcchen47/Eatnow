@@ -96,3 +96,14 @@ module.exports = function(passport) {
      }));
 
 };
+
+// console.log(generateHash("12345SC"));
+// console.log(generateHash("12345KD"));
+// console.log(generateHash("12345KT"));
+// console.log(generateHash("12345DG"));
+// console.log(generateHash("12345AI"));
+// console.log(generateHash("12345SL"));
+// console.log(generateHash("12345NY")); 
+// console.log(generateHash("12345ZP"));
+// console.log(generateHash("12345DW"));
+// console.log(generateHash("12345JM"));

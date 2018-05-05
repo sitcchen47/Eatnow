@@ -7,6 +7,8 @@ Usage:
 
 ```javascript
     npm install 
+```
+    node InitializaDatabase.js
     npm start
 ```
 在浏览器地址栏中输入 localhost:3000/profile        

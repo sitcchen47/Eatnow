@@ -3,19 +3,19 @@
 		"_id": "001",
 		"name": "Jing Fong Chinatown",
 		"tag" : "Chinese",
-		"owner" : "robin",
+		"owner" : "JaVale McGee",
 		"address": "20 Elizabeth St, New York, NY, 10013",
 		"contactInfo": {
 			"phoneNum": "(212) 964-5256",
 			"website": "http://jingfongny.com/"
 		},
-		"imgURL": "2.jpg",
+		"imgURL": "9ea338a3679e53f40638e9078700913b",
 		"Dishes": [
 			{
 			"_id": "001",
 			"title": "Chocolate Lava",
 			"calories": "350",
-			"imgURL": "d2.jpg"
+			"imgURL": "2.jpg"
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9636.570056328697!2d-74.00179918731911!3d40.71461653430524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27a4786b25%3A0x1181c2aa6ceec015!2sJing+Fong+Chinatown!5e0!3m2!1sen!2sus!4v1525373395021\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
@@ -26,7 +26,7 @@
 		"_id" : "5aea87b7a3c0b6e23d41098c", 
 		"name" : "Golden Unicorn", 
 		"tag" : "Chinese", 
-		"owner" : "robin",
+		"owner" : "David West",
 		"address" : "18 E Broadway, New York, NY, 10002", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 941-0911", 
@@ -49,7 +49,7 @@
 		"_id" : "", 
 		"name" : "Spot Dessert Bar", 
 		"tag" : "American", 
-		"owner" : "robin",
+		"owner" : "Zaza Pachulia",
 		"address" : "13 St Marks Pl, New York, NY, 10003", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 677-5670", 
@@ -60,11 +60,11 @@
 			"_id": "",
 			"title": "Milky Puff",
 			"calories": "255",
-			"imgURL": ""
+			"imgURL": "0d8da8b376bd14020d1437b1fad6fbc5"
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12093.946382611834!2d-73.98897512311663!3d40.72931725206334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2599b879e00d1%3A0x353ed2ebde7fd287!2sSpot+Dessert+Bar!5e0!3m2!1sen!2sus!4v1525449975007\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-		"imgURL" : "", 
+		"imgURL" : "0d8da8b376bd14020d1437b1fad6fbc5", 
 		"createDate" : "", 
 		"editDate" : ""
 	},
@@ -72,7 +72,7 @@
 		"_id" : "", 
 		"name" : "Auntie Guan's Kitchen", 
 		"tag" : "Chinese", 
-		"owner" : "robin",
+		"owner" : "Nick Young",
 		"address" : "108 W 14th St, New York, NY, 10011", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 206-8388", 
@@ -87,7 +87,7 @@
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33750.76382604933!2d-74.01425486410322!3d40.72119403379317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9f40b786eb3a5168!2sAuntie+Guan&#39;s+Kitchen+108!5e0!3m2!1sen!2sus!4v1525450439413\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-		"imgURL" : "", 
+		"imgURL" : "b1dacf1faa05a2f8f7d89851f4d2b99b", 
 		"createDate" : "", 
 		"editDate" : ""
 	},
@@ -95,7 +95,7 @@
 		"_id" : "", 
 		"name" : "Jongro BBQ", 
 		"tag" : "American", 
-		"owner" : "robin",
+		"owner" : "Shaun Livingston",
 		"address" : "22 W 32nd St, New York, NY, 10001", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 473-2233", 
@@ -110,7 +110,7 @@
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33750.76382604933!2d-74.01425486410322!3d40.72119403379317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a8ef657243%3A0x9185d801317e2d9d!2sJongro+BBQ!5e0!3m2!1sen!2sus!4v1525450688730\" width=\"600\" height=\"450\" frameborder =\"0\" style=\"border:0\" allowfullscreen></iframe>",
-		"imgURL" : "", 
+		"imgURL" : "97251a266708275beab118797488f94a", 
 		"createDate" : "", 
 		"editDate" : ""
 	},
@@ -118,7 +118,7 @@
 		"_id" : "", 
 		"name" : "Scarpetta", 
 		"tag" : "Italian", 
-		"owner" : "robin",
+		"owner" : "Andre Iguodala",
 		"address" : "88 Madison Ave, New York, NY, 10016", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 691-0555", 
@@ -133,15 +133,15 @@
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33750.76382604933!2d-74.01425486410322!3d40.72119403379317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf9fbbc5b7%3A0x7a13db00ddec25b3!2sScarpetta!5e0!3m2!1sen!2sus!4v1525450930643\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-		"imgURL" : "", 
+		"imgURL" : "6e335adcc0490d1a9f573288cac962bd", 
 		"createDate" : "", 
 		"editDate" : ""
 	},
 	{ 
 		"_id" : "", 
 		"name" : "Hakata Tonton", 
-		"tag" : "American", 
-		"owner" : "robin",
+		"tag" : "Japanese", 
+		"owner" : "Draymond Green",
 		"address" : "61 Grove St, New York, NY, 10014", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 242-3699", 
@@ -156,7 +156,7 @@
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33750.76382604933!2d-74.01425486410322!3d40.72119403379317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259947f68eb21%3A0x243d67642f5da332!2sHakata+Tonton!5e0!3m2!1sen!2sus!4v1525451101597\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-		"imgURL" : "", 
+		"imgURL" : "6e335adcc0490d1a9f573288cac962bd", 
 		"createDate" : "", 
 		"editDate" : ""
 	},
@@ -164,7 +164,7 @@
 		"_id" : "", 
 		"name" : "Omakase Room by Tatsu", 
 		"tag" : "American", 
-		"owner" : "robin",
+		"owner" : "Klay Thompson",
 		"address" : "14 Christopher St, New York, NY, 10014", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 367-2067", 
@@ -179,7 +179,7 @@
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23942.912561660047!2d-74.02238292076895!3d40.73602282065683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25996a128d3f1%3A0x1bd8e65e543837fa!2sOmakase+Room+by+Tatsu!5e0!3m2!1sen!2sus!4v1525451247440\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-		"imgURL" : "", 
+		"imgURL" : "f957bea5e072642d392d2b15349a33a9", 
 		"createDate" : "", 
 		"editDate" : ""
 	},
@@ -188,7 +188,7 @@
 		"_id" : "", 
 		"name" : "La Sirène", 
 		"tag" : "French", 
-		"owner" : "robin",
+		"owner" : "Kevin Durant",
 		"address" : "558 Broome St, New York, NY 10013", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 925-3061", 
@@ -203,15 +203,15 @@
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23942.912561660047!2d-74.02238292076895!3d40.73602282065683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf5a821b557acc61d!2sLa+Sir%C3%A8ne!5e0!3m2!1sen!2sus!4v1525451350475\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-		"imgURL" : "", 
+		"imgURL" : "6f9d20acf217b7b1b08a8459cb2d40ec", 
 		"createDate" : "", 
 		"editDate" : ""
 	},
 	{ 
 		"_id" : "", 
 		"name" : "Ramen-Ya", 
-		"tag" : "Mexico", 
-		"owner" : "robin",
+		"tag" : "Japanese", 
+		"owner" : "Stephen Curry",
 		"address" : "181 West 4th Street, New York, NY, 10014", 
 		"contactInfo" : { 
 			"phoneNum" : "(212) 989-5440", 
@@ -226,7 +226,7 @@
 			}
 		],
 		"map" : "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23942.912561660047!2d-74.02238292076895!3d40.73602282065683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25993f1906909%3A0xd2cdb9667d9ad548!2sRamen-Ya!5e0!3m2!1sen!2sus!4v1525451568974\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>",
-		"imgURL" : "", 
+		"imgURL" : "e79cdb43fb0db162fb2a8881f152514d", 
 		"createDate" : "", 
 		"editDate" : ""
 	}
