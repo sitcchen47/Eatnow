@@ -7,7 +7,6 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.css" />
-  
   <link rel="stylesheet" href="/stylesheets/style.css">
   
 </head>
@@ -31,37 +30,41 @@
         <div class="modal-body">
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-              <form class="myForm" action="/login" method="post">
+              <form id="loginForm" class="myForm" action="/login" method="post">
                 {{#if loginMessage.length}}
                   <div id="signinAlert" class="alert alert-danger"> {{loginMessage}} </div>
                 {{/if}}
                 <div class="form-group">
                     <label for="loginname">Username</label>
-                    <input id = "loginname"type="text" class="form-control" name="name">
+                    <input id = "loginname"type="text" class="form-control" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="signin-psd">Password</label>
-                    <input id = "signin-psd" type="password" class="form-control" name="password">
+                    <input id = "signin-psd" type="password" class="form-control" name="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary login btn-block">Log in</button>
               </form>
             </div>
             <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-              <form class="myForm" action="/signup" method="post">
+              <form id="signupForm" class="myForm" action="/signup" method="post">
                 {{#if signupMessage.length}}
                   <div id="signupAlert" class="alert alert-danger"> {{signupMessage}} </div>
                 {{/if}}
                 <div class="form-group">
                     <label for="signup-name">Username</label>
-                    <input id = "signup-name" type="text" class="form-control" name="name">
+                    <input id = "signup-name" type="text" class="form-control" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="signup-psd">Password</label>
-                    <input id = "signup-psd"type="password" class="form-control" name="password">
+                    <input id = "signup-psd" type="password" class="form-control" name="password" required>
                 </div>
                 <div class="form-group">
+<<<<<<< HEAD
                     <label for="confirm-psd">Confirm</label>
-                    <input id = "confirm-psd" type="password" class="form-control" name="confirm-psd">
+=======
+                    <label for="confirmPsd">Confirm</label>
+>>>>>>> d55ce3a5e8fb4129e103c104af80526c7c6871ba
+                    <input id = "confirmPsd" type="password" class="form-control" name="confirmPsd" required>
                 </div>
                 <div class="row mb-3">
                     <label for="SellerRadio" class="col-sm-6">
@@ -153,6 +156,9 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+  <script src="/JavaScript/form-validation/loginForm.js"></script>
+  <script src="/JavaScript/form-validation/signupForm.js"></script>
   <script>
     (function($) {
       // 1. preventFormSubmission
@@ -204,6 +210,7 @@
       }
     })(window.jQuery);
   </script>
+
   {{> (lookup . 'partial') }}
 </body>
 </html>

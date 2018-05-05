@@ -1,7 +1,8 @@
 <div class="container mt-3">
+    <div class="sr-only" id="restFlag"> {{ rest._id }}</div>
     <div class="rest row">
         <div class="col-sm-4">
-            <img src="/images/{{rest.imgURL}}" alt="" class="w-100 h-75">
+            <img src="/images/{{rest.imgURL}}" alt="{{ rest.name }}" class="w-100 h-75">
         </div>
         <div class="col-sm-4 info">
             <div class="w-100 h-75">
@@ -24,15 +25,25 @@
     </div>
     <div class="row dishSection">
         {{#each rest.dishes}}
-            <div class="card dish-item">
+            <div class="card dish-item mr-sm-3">
                 <img class="card-img-top" src="/images/{{this.imgURL}}" alt="{{this.name}}">
                 <div class="card-body">
                     <h5 class="card-title">{{this.name}}</h5>
                     <p class="card-text">Calories: {{this.calories}}</p>
                 </div>
             </div>
-        {{/each}}
+        {{/each}} 
     </div>
+    <button class="btn btn-primary my-3 trigger">Add a Dish</button>
+    <form id="commentForm" class="needs-validation hidden" enctype="multipart/form-data" method="POST" novalidate> 
+
+        <div class="form-group">
+            <label for="content" class="sr-only">content</label>
+            <textarea name="content" id="content" class="form-control" placeholder="Put your comments here"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Comment</button>
+    </form>
     <div class="row commentsSection">
         {{#each comments}}
             <div class="comment-item row">
