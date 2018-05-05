@@ -13,7 +13,7 @@
         let dishForm = new FormData(event.target);
         $(this).toggleClass('hidden');
 
-        let form = new FormData(event.target);
+        // let form = new FormData(event.target);
         $.ajax({
             url: "/profile/uploadDish/" + id,
             type: "post",

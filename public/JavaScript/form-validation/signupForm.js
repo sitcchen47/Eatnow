@@ -12,7 +12,7 @@ $().ready(function(){
             confirmPsd: {
                 required: true,
                 minlength: 6,
-                equalTo: "#password"
+                equalTo: "#signup-psd"
             },
             messages: {
                 name: {
