@@ -1,18 +1,32 @@
-const restaurants = require("../dataDesign/restaurant");
+const restaurantsData = require("../dataDesign/restaurant");
+const usersData = require("../dataDesign/users");
 var multer = require('multer');
 var path = require('path');
-var DataModel = require('../routes/model');
-var restaurantsModel = DataModel.Restaurants;
 var upload = multer({
     dest: path.join(__dirname, "../public/images")
 })
+var DataModel = require('../routes/model');
+var Restaurants = DataModel.Restaurants;
+var Users = DataModel.Users;
 
-for(let r of restaurants) {
+for(let u of usersData) {
+    let user = new Users({
+        name: u.name,
+        hashedPassword: u.hashedPassword,
+        isSeller: u.isSeller,
+        createDate: new Date()
+    });
+    user.save().then(() => {
+        console.log('success');
+    });
+}
+
+for(let r of restaurantsData) {
     var addr = r.address.split(',');
     if(addr.length === 4) {
         addr.splice(1, 0, "");
     }
-    let rest = new restaurantsModel({
+    let rest = new Restaurants({
         name: r.name,
         tag: r.tag,
         address: {
