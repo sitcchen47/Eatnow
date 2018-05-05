@@ -1,7 +1,7 @@
     {{#if isSeller}}
     <div class="container">
         <button class="btn btn-primary my-3 trigger">Add a restaurant</button>
-        <form class="needs-validation hidden" enctype="multipart/form-data" method="POST" novalidate> 
+        <form id="profileForm" class="needs-validation hidden" enctype="multipart/form-data" method="POST" novalidate> 
             <div class="row">
                 <div class="col-sm-6 form-group">
                     <label for="restaurantName">Name</label>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-6 mb-3 form-group">
                     <label for="website">Website Address</label>
-                    <input type="text" class="form-control" id="website" placeholder="website" name="website">
+                    <input type="text" class="form-control" id="website" placeholder="website" name="website" required>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label for="inputAddress2">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, studio, or floor">
+                <input type="text" class="form-control" id="inputAddress2" name="address2" placeholder="Apartment, studio, or floor" required>
             </div>
 
              <div class="form-row">
@@ -164,6 +164,8 @@
     </div>
     {{/if}}
     <script src="/JavaScript/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script src="/JavaScript/form-validation/profileForm.js"></script>
     <script>
         let triggers = document.querySelectorAll('.trigger');
         triggers.forEach((triggerdom) => {
