@@ -12,7 +12,7 @@
         $(this).toggleClass('hidden');
 
         let form = new FormData(event.target);
-        let id = $('restFlag').text();
+        let id = $('#restFlag').text();
         $.ajax({
             url: "/restaurants/post/" + id,
             type: "post",
@@ -21,7 +21,11 @@
             contentType: false,
             // 3. get the restaurants html and insert into the album element
             success: function(data) {
-                commentsSection.append(data);
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                } else {
+                    commentsSection.append($(data));
+                }
             },
             error: function(e) {
                 alert('There must be some error!');

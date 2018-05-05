@@ -24,6 +24,7 @@ router.post('/post/:id', Middlewares.isLoggedin, async function(req, res) {
     let id = req.params.id;
     let rest = await Restaurants.findById(id);
 
+    console.log("aaa");
     let { content } = req.body;
     let comment = new Comments({
         belongtoRestaurant: rest.name,
