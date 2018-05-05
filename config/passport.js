@@ -11,11 +11,6 @@ const generateHash = function(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
-// checking if password is valid
-const validPassword = function(password) {
-    return bcrypt.compareSync(password, this.hashedPassword);
-};
-
 module.exports = function(passport) {
     
     // serializeUser 在用户登录验证成功以后将会把用户的数据存储到 session 中（在这里
@@ -41,12 +36,22 @@ module.exports = function(passport) {
      },
      function(req, username, password, done) {   
         process.nextTick(function(){
-                 users.findOne({name: username }, function(err, user) {
+                 users.findOne({name: username }, async function (err, user) {
                  if(err) { return done(err);} 
                  if(!user) { return done(null, false, req.flash('loginMessage', 'No users found. Sign up an account.'));}
-                 if(!bcrypt.compareSync(password, user.hashedPassword)) 
-                    { return done(null, false, req.flash('loginMessage', 'Wrong password.'));}                
-                 return done(null, user);
+                 
+                 let match = false;
+                 try {
+                    match = await bcrypt.compareSync(password, user.hashedPassword);
+                 } catch (e) { // pass 
+            
+                 }
+                 if (!match){
+                    return done(null, false, req.flash('loginMessage', 'Wrong password.'));
+                 }
+                 else {
+                    return done(null, user);
+                 }                
                  });
              });   
      }));
