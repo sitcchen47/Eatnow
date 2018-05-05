@@ -1,0 +1,11 @@
+<div class="comment-item">
+    <div> <span> {{ comment.peopleWhoComment }}</span> <span class="text-muted"> {{ comment.time }}</span> 
+        {{#if comment.isSeller}} 
+            <button class="btn btn-secondary btn-sm"> Seller </button>
+        {{else }}
+            <button class="btn btn-secondary btn-sm"> Customer </button>
+
+        {{/if}}
+    </div>
+    <div> {{ comment.content }}</div>    
+</div>

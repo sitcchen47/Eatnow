@@ -16,15 +16,12 @@ $().ready(function(){
             },
             messages: {
                 name: {
-                    required: "Please enter a username",
                     minlength: "Your username must be at least two characters"
                 },
                 password: {
-                    required: "Please provide a password",
                     minlength: "Your password must be at least 6 characters long"
                 },
                 confirmPsd: {
-                    required: "Please provide a password",
                     minlength: "Your password must be at least 6 characters long",
                     equalTo: "Please enter the same password as above"
                 }

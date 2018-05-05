@@ -12,11 +12,9 @@ $().ready(function(){
         },
         messages: {
             name: {
-                required: "Please enter a username",
                 minlength: "Your username must be at least two characters"
             },
             password: {
-                required: "Please provide a password",
                 minlength: "Your password must at least 6 characters long"
             }
         }
