@@ -18,7 +18,7 @@ module.exports = function(app, passport) {
         
         // console.log(req.flash('loginMessage'));
         // console.log(req.flash('LoginError'));
-        let loginMessage = req.flash('loginMessage').length !== 0 ? req.flash('loginMessage') : req.flash('LoginError');
+        //let loginMessage = req.flash('loginMessage').length !== 0 ? req.flash('loginMessage') : req.flash('LoginError');
         // console.log(loginMessage);
         
         res.render('index', { 
@@ -28,7 +28,7 @@ module.exports = function(app, passport) {
             usRests,
             inRests,
             user: req.user,
-            loginMessage,
+            loginMessage : req.flash('loginMessage'),
             signupMessage: req.flash('signupMessage'),
             partial: 'main-script'
         });
