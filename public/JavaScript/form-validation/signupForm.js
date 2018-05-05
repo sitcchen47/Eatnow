@@ -12,7 +12,7 @@ $().ready(function(){
             confirmPsd: {
                 required: true,
                 minlength: 6,
-                equalTo: "#password"
+                equalTo: "#signup-psd"
             },
             messages: {
                 name: {
@@ -21,11 +21,11 @@ $().ready(function(){
                 },
                 password: {
                     required: "Please provide a password",
-                    minlength: "Your password must at least 6 characters long"
+                    minlength: "Your password must be at least 6 characters long"
                 },
                 confirmPsd: {
                     required: "Please provide a password",
-                    minlength: "Your password must at least 6 characters long",
+                    minlength: "Your password must be at least 6 characters long",
                     equalTo: "Please enter the same password as above"
                 }
             }
