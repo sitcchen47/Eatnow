@@ -1,114 +1,146 @@
 <div class="container-fluid">
     <div id="sidebar" class="list-group text-truncate">
         <a class="list-group-item font-weight-bold" href="#">Category</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-1"><span class="flag-icon flag-icon-it flag-icon-squared"></span> Italian</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-2"><span class="flag-icon flag-icon-cn flag-icon-squared"></span> Chinese</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-1"><span class="flag-icon flag-icon-cn flag-icon-squared"></span> Chinese</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-2"><span class="flag-icon flag-icon-jp flag-icon-squared"></span> Japanese</a>
         <a class="list-group-item list-group-item-action" href="#list-item-3"><span class="flag-icon flag-icon-us flag-icon-squared"></span> American</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-4"><span class="flag-icon flag-icon-in flag-icon-squared"></span> Indian</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-4"><span class="flag-icon flag-icon-it flag-icon-squared"></span> Italian</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-4"><span class="flag-icon flag-icon-fr flag-icon-squared"></span> French</a>
     </div>
     <div class="main scrollspy-example w-75">
         <div id="list-item-1" class="blank-content"></div>
-            <h4 class="mb-5">Italian Style Restaurants</h4>
-            {{#each itRests}}
-                <div class="rests-item py-2">
-                    <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
-                            
-                        </div>
-                        <div class="col-sm-3">
-                            <address>
-                                <span> {{ address.address1 }}</span><br>
-                                <span> {{ address.address2 }} </span> <br>
-                                <span> {{ address.city }} </span>
-                                <span> {{ address.state }} </span>
-                                <span> {{ address.zipcode }} </span> <br>
-                            </address>
-                            <div class="contact-info">
-                                <span>{{contactInfo.phoneNum}}</span> <br>
-                                <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
-                            </div>
+
+        <h4 class="mb-5">Chinese Style Restaurants</h4>
+        {{#each cnRests}}
+            <div class="rests-item py-2">
+                <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>
+                <div class="row">
+                    <div class="col-sm-9">
+                        <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <address>
+                            <span> {{ address.address1 }}</span><br>
+                            <span> {{ address.address2 }} </span> <br>
+                            <span> {{ address.city }} </span>
+                            <span> {{ address.state }} </span>
+                            <span> {{ address.zipcode }} </span> <br>
+                        </address>
+                        <div class="contact-info">
+                            <span>{{contactInfo.phoneNum}}</span> <br>
+                            <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
                         </div>
                     </div>
-                    <div class="comments"></div>
-                </div>    
-            {{/each}}
+                </div>
+                <div class="comments"></div>
+            </div>    
+        {{/each}}
+        
             {{!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9883449339954!2d-74.03257704923877!3d40.74028197922737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2575f8894b1c7%3A0xc188461a04fc1!2sRice+Shop!5e0!3m2!1sen!2sus!4v1525195877753" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> --}}
-        <div id="list-item-2" class="blank-content"></div>        
-            <h4 class="mb-5">Chinese Style Restaurants</h4>
-            {{#each cnRests}}
-                <div class="rests-item py-2">
-                    <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>              
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
-                        </div>
-                        <div class="col-sm-3">
-                            <address>
-                                <span> {{ address.address1 }}</span><br>
-                                <span> {{ address.address2 }} </span> <br>
-                                <span> {{ address.city }} </span>
-                                <span> {{ address.state }} </span>
-                                <span> {{ address.zipcode }} </span> <br>
-                            </address>
-                            <div class="contact-info">
-                                <span>{{contactInfo.phoneNum}}</span> <br>
-                                <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
-                            </div>
+        <div id="list-item-2" class="blank-content"></div>
+
+        <h4 class="mb-5">Japanese Style Restaurants</h4>
+        {{#each jpRests}}
+            <div class="rests-item py-2">
+                <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>              
+                <div class="row">
+                    <div class="col-sm-9">
+                        <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <address>
+                            <span> {{ address.address1 }}</span><br>
+                            <span> {{ address.address2 }} </span> <br>
+                            <span> {{ address.city }} </span>
+                            <span> {{ address.state }} </span>
+                            <span> {{ address.zipcode }} </span> <br>
+                        </address>
+                        <div class="contact-info">
+                            <span>{{contactInfo.phoneNum}}</span> <br>
+                            <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
                         </div>
                     </div>
                 </div>
-            {{/each}}
-        <div id="list-item-3" class="blank-content"></div>        
-            <h4 class="mb-5">American Style Restaurants</h4>
-            {{#each usRests}}
-                <div class="rests-item py-2">
-                    <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>           
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
-                        </div>
-                        <div class="col-sm-3">
-                            <address>
-                                <span> {{ address.address1 }}</span><br>
-                                <span> {{ address.address2 }} </span> <br>
-                                <span> {{ address.city }} </span>
-                                <span> {{ address.state }} </span>
-                                <span> {{ address.zipcode }} </span> <br>
-                            </address>
-                            <div class="contact-info">
-                                <span>{{contactInfo.phoneNum}}</span> <br>
-                                <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
-                            </div>
+            </div>
+        {{/each}}
+        
+        <div id="list-item-3" class="blank-content"></div>       
+        <h4 class="mb-5">American Style Restaurants</h4>
+        {{#each usRests}}
+            <div class="rests-item py-2">
+                <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>           
+                <div class="row">
+                    <div class="col-sm-9">
+                        <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <address>
+                            <span> {{ address.address1 }}</span><br>
+                            <span> {{ address.address2 }} </span> <br>
+                            <span> {{ address.city }} </span>
+                            <span> {{ address.state }} </span>
+                            <span> {{ address.zipcode }} </span> <br>
+                        </address>
+                        <div class="contact-info">
+                            <span>{{contactInfo.phoneNum}}</span> <br>
+                            <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
                         </div>
                     </div>
                 </div>
-            {{/each}}
-        <div id="list-item-4" class="blank-content"></div>        
-            <h4 class="mb-5">Indian Style Restaurants</h4>
-            {{#each inRests}}
-                <div class="rests-item py-2">
-                    <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>                
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
-                        </div>
-                        <div class="col-sm-3">
-                            <address>
-                                <span> {{ address.address1 }}</span><br>
-                                <span> {{ address.address2 }} </span> <br>
-                                <span> {{ address.city }} </span>
-                                <span> {{ address.state }} </span>
-                                <span> {{ address.zipcode }} </span> <br>
-                            </address>
-                            <div class="contact-info">
-                                <span>{{contactInfo.phoneNum}}</span> <br>
-                                <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
-                            </div>
+            </div>
+        {{/each}}
+        
+        <div id="list-item-4" class="blank-content"></div>       
+        <h4 class="mb-5">Italian Style Restaurants</h4>
+        {{#each itRests}}
+            <div class="rests-item py-2">
+                <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>                
+                <div class="row">
+                    <div class="col-sm-9">
+                        <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <address>
+                            <span> {{ address.address1 }}</span><br>
+                            <span> {{ address.address2 }} </span> <br>
+                            <span> {{ address.city }} </span>
+                            <span> {{ address.state }} </span>
+                            <span> {{ address.zipcode }} </span> <br>
+                        </address>
+                        <div class="contact-info">
+                            <span>{{contactInfo.phoneNum}}</span> <br>
+                            <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
                         </div>
                     </div>
                 </div>
-            {{/each}}
+            </div>
+        {{/each}}
+        
+        <div id="list-item-4" class="blank-content"></div>       
+        <h4 class="mb-5">French Style Restaurants</h4>
+        {{#each frRests}}
+            <div class="rests-item py-2">
+                <h5 class="restaurant-name"> <a href="/restaurants/get/{{ _id }}">{{name}}</a> </h5>                
+                <div class="row">
+                    <div class="col-sm-9">
+                        <a href="/restaurants/get/{{ _id }}"><img src="/images/{{this.imgURL}}" alt="" class="w-50"></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <address>
+                            <span> {{ address.address1 }}</span><br>
+                            <span> {{ address.address2 }} </span> <br>
+                            <span> {{ address.city }} </span>
+                            <span> {{ address.state }} </span>
+                            <span> {{ address.zipcode }} </span> <br>
+                        </address>
+                        <div class="contact-info">
+                            <span>{{contactInfo.phoneNum}}</span> <br>
+                            <a href="http://{{ contactInfo.website }}">{{ contactInfo.website }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+               
     </div>  
 </div>

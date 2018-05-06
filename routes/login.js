@@ -15,7 +15,8 @@ module.exports = function(app, passport) {
         let cnRests = await Restaurants.find({"tag": "Chinese"});
         // console.log(cnRests);
         let usRests = await Restaurants.find({"tag": "American"});
-        let inRests = await Restaurants.find({"tag": "Indian"});
+        let jpRests = await Restaurants.find({"tag": "Japanese"});
+        let frRests = await Restaurants.find({"tag": "French"});
         
         // console.log(req.flash('loginMessage'));
         // console.log(req.flash('LoginError'));
@@ -27,7 +28,8 @@ module.exports = function(app, passport) {
             itRests,
             cnRests,
             usRests,
-            inRests,
+            jpRests,
+            frRests,
             user: req.user,
             loginMessage : req.flash('loginMessage'),
             signupMessage: req.flash('signupMessage'),
