@@ -56,4 +56,24 @@ module.exports = function(app, passport) {
         failureRedirect : '/', 
         failureFlash : true
     }));
+
+    app.post('/search', async function(req, res) {
+        let { q } = req.body;
+        let rest;
+        try {
+            rest = await Restaurants.findOne({name: q});
+        } catch(e) {
+            console.log(e);
+            res.status(404).send("There is something wrong!");
+        }
+        if (rest) {
+            res.redirect("restaurants/get/" + rest._id);
+        } else {
+            res.render('snippets/noRest', {
+                message: "There is no Restaurant named ",
+                name: q,
+                partial: 'main-script'
+            });
+        }
+    })
 }
