@@ -54,8 +54,4 @@ module.exports = function(app, passport) {
         failureRedirect : '/', 
         failureFlash : true
     }));
-
-    app.post('/search', function(req, res) {
-        
-    });
 }
