@@ -29,6 +29,7 @@ for(let r of restaurantsData) {
     let rest = new Restaurants({
         name: r.name,
         tag: r.tag,
+        owner: r.owner,
         address: {
             address1: addr[0],
             address2: addr[1],
