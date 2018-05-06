@@ -5,6 +5,7 @@ var Middlewares = require('../config/middleware');
 
 var profileRouter = require("./profile");
 var restaurantsRouter = require('./restaurants');
+
 module.exports = function(app, passport) {
     app.use('/profile', Middlewares.isLoggedin, profileRouter);
     app.use('/restaurants', restaurantsRouter);
@@ -53,4 +54,8 @@ module.exports = function(app, passport) {
         failureRedirect : '/', 
         failureFlash : true
     }));
+
+    app.post('/search', function(req, res) {
+        
+    });
 }
