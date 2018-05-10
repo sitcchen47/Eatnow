@@ -16,7 +16,7 @@ var upload = multer({
 router.get('/', async function (req, res) {
     // if the loggedIn user is sellers
     if (req.user.isSeller) {
-        let rests  = await Restaurants.find({owner: req.user.name});
+        let rests  = await Restaurants.find({owner: req.user.name}).sort('-createDate');
         res.render('snippets/profile', {
             user: req.user,
             isSeller: true,
