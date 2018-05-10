@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>{{title}}</title>
+  <title>Eatnow</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.css" />
   <link rel="stylesheet" href="/stylesheets/style.css">
   
 </head>
 <body data-spy="scroll" data-target="#sidebar" data-offset="0">
-  <div class="modal fade" id="signin-signup-tab" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="signin-signup-tab" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header pb-0">
@@ -129,14 +129,15 @@
       </ul>
 
       {{#if user }}
-      <form action="" class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0">
         <button class="btn btn-success mr-2"><span id="username"> {{ user.name }}</span></button>
-        <button class="btn mr-sm-2"><a href="/logout">Log out</a></button>
+        <button class="btn mr-sm-2" onclick="window.location.href='/logout';">Log out</button>
+
       </form>
       {{else}}
       <form class="form-inline my-2 my-lg-0" id="modalForm">          
-        <button class="btn mr-2" data-toggle="modal" data-target="#signin-signup-tab" id="signin-button">Sign in</a></button>
-        <button class="btn mr-sm-2" data-toggle="modal" data-target="#signin-signup-tab" id="signup-button"><a href="#" >Sign up</a></button>
+        <button class="btn mr-2" data-toggle="modal" data-target="#signin-signup-tab" id="signin-button">Sign in</button>
+        <button class="btn mr-sm-2" data-toggle="modal" data-target="#signin-signup-tab" id="signup-button">Sign up</button>
       </form>
       {{/if}}
 

@@ -24,7 +24,7 @@ module.exports = function(app, passport) {
         // console.log(loginMessage);
         
         res.render('index', { 
-            title: 'Express',
+            title: 'Eatnow',
             itRests,
             cnRests,
             usRests,
