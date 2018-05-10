@@ -12,11 +12,11 @@
         event.preventDefault();
         $(this).toggleClass('hidden');
 
-        // let form = new FormData(event.target);
+        let form = new FormData(event.target);
         $.ajax({
             url: "/profile/uploadDish/" + id,
             type: "post",
-            data: dishForm,
+            data: form,
             processData: false,
             contentType: false,
             // 3. get the restaurants html and insert into the album element

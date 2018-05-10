@@ -16,7 +16,7 @@ var upload = multer({
 router.get('/', async function (req, res) {
     // if the loggedIn user is sellers
     if (req.user.isSeller) {
-        let rests  = await Restaurants.find({owner: req.user.name});
+        let rests  = await Restaurants.find({owner: req.user.name}).sort('-createDate');
         res.render('snippets/profile', {
             user: req.user,
             isSeller: true,
@@ -81,6 +81,7 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
     // the rname should be different!
     let rest = new Restaurants({
         name: rname,
+        owner: req.user.name,
         tag: tag,
         address: {address1, address2, city, state, zipcode},
         map: map,
@@ -89,7 +90,8 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
         },
         imgURL: req.file.filename,
         createDate: new Date(),
-        editDate: new Date()
+        editDate: new Date(),
+        dishes: []
     });
     console.log("false");
     await rest.save();
