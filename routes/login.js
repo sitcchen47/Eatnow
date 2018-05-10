@@ -1,4 +1,5 @@
 var router = require('express').Router();
+var xss = require("xss");
 var DataModel = require('./model');
 var Restaurants = DataModel.Restaurants;
 var Middlewares = require('../config/middleware');
@@ -58,7 +59,7 @@ module.exports = function(app, passport) {
     }));
 
     app.post('/search', async function(req, res) {
-        let { q } = req.body;
+        let q = xss(req.body.q);
         let rest;
         try {
             rest = await Restaurants.findOne({name: q});

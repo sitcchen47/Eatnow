@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var DataModel = require('./model');
+var xss = require('xss');
 
 var Restaurants = DataModel.Restaurants;
 var Comments = DataModel.Reviews;
@@ -28,7 +29,7 @@ router.get('/get/:id', async function(req, res) {
 
 router.post('/post/:id', Middlewares.isLoggedin, async function(req, res) {
     let id = req.params.id;
-    let { content } = req.body;
+    let content = xss(req.body.content);
 
     let rest = await Restaurants.findById(id.trim());
 
