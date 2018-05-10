@@ -131,7 +131,7 @@
       {{#if user }}
       <form class="form-inline my-2 my-lg-0">
         <button class="btn btn-success mr-2"><span id="username"> {{ user.name }}</span></button>
-        <button class="btn mr-sm-2" onclick="window.location.href='/logout';">Log out</button>
+        <button class="btn mr-sm-2" onclick="window.location.href='/logout'; return false;">Log out</button>
 
       </form>
       {{else}}
