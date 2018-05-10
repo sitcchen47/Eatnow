@@ -81,6 +81,7 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
     // the rname should be different!
     let rest = new Restaurants({
         name: rname,
+        owner: req.user.name,
         tag: tag,
         address: {address1, address2, city, state, zipcode},
         map: map,
@@ -89,7 +90,8 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
         },
         imgURL: req.file.filename,
         createDate: new Date(),
-        editDate: new Date()
+        editDate: new Date(),
+        dishes: []
     });
     await rest.save();
 
