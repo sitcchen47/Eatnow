@@ -129,9 +129,10 @@
       </ul>
 
       {{#if user }}
-      <form action="" class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0">
         <button class="btn btn-success mr-2"><span id="username"> {{ user.name }}</span></button>
-        <button class="btn mr-sm-2"><a href="/logout">Log out</a></button>
+        <button class="btn mr-sm-2" onclick="window.location.href='/logout';">Log out</button>
+
       </form>
       {{else}}
       <form class="form-inline my-2 my-lg-0" id="modalForm">          
