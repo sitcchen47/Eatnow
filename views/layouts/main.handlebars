@@ -36,7 +36,7 @@
                 {{/if}}
                 <div class="form-group">
                     <label for="loginname">Username</label>
-                    <input id = "loginname"type="text" class="form-control" name="name" required>
+                    <input id = "loginname" type="text" class="form-control" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="signin-psd">Password</label>
@@ -64,10 +64,10 @@
                 </div>
                 <div class="row mb-3">
                     <label for="SellerRadio" class="col-sm-6">
-                        <input type="radio" name="radio" class="mr-sm-2" id = "SellerRadio" value="Seller" autocomplete="off" checked> Seller
+                        <input type="radio" name="radio" class="mr-sm-2" id = "SellerRadio" value="Seller" checked> Seller
                     </label>
                     <label for="CustomerRadio" class="col-sm-6">
-                        <input type="radio" name="radio" class="mr-sm-2" id = "CustomerRadio" value="Customer" autocomplete="off"> Customer
+                        <input type="radio" name="radio" class="mr-sm-2" id = "CustomerRadio" value="Customer"> Customer
                     </label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block signup">Signup</button>
@@ -135,7 +135,7 @@
       </form>
       {{else}}
       <form class="form-inline my-2 my-lg-0" id="modalForm">          
-        <button class="btn mr-2" data-toggle="modal" data-target="#signin-signup-tab" id="signin-button"><a href="#" >Sign in</a></button>
+        <button class="btn mr-2" data-toggle="modal" data-target="#signin-signup-tab" id="signin-button">Sign in</a></button>
         <button class="btn mr-sm-2" data-toggle="modal" data-target="#signin-signup-tab" id="signup-button"><a href="#" >Sign up</a></button>
       </form>
       {{/if}}
