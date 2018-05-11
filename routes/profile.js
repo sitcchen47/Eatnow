@@ -1,4 +1,5 @@
 var router = require('express').Router();
+var xss = require("xss");
 var multer = require('multer');
 var path = require('path');
 var DataModel = require('./model');
@@ -57,7 +58,9 @@ router.get('/view/:id', async function (req, res) {
 });
 
 router.post('/uploadDish/:id', upload.single('dishPic'), async function(req, res) {
-    const {name, calories} = req.body;
+    const name = xss(req.body.name);
+    const calories = xss(req.body.calories);
+
     const id = req.params.id;
     let rest = await Restaurants.findById(id);
     rest.dishes = rest.dishes || [];
@@ -73,7 +76,16 @@ router.post('/uploadDish/:id', upload.single('dishPic'), async function(req, res
 });
 
 router.post('/upload', upload.single('restaurantPic'), async function (req, res) {
-    const {rname, tag, phoneNum, website, address1, address2, city, state, zipcode, map} = req.body;
+    const rname = xss(req.body.rname);
+    const tag = xss(req.body.tag);
+    const phoneNum = xss(req.body.phoneNum);
+    const website = xss(req.body.website);
+    const address1 = xss(req.body.address1);
+    const address2 = xss(req.body.address2);
+    const city = xss(req.body.city);
+    const state = xss(req.body.state);
+    const zipcode = xss(req.body.zipcode);
+    const map = xss(req.body.map);
     // console.log(req.body);
     // validation()
 
