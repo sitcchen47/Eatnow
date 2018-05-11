@@ -47,12 +47,12 @@ $().ready(function(){
     });
     //validate website
     jQuery.validator.addMethod("isWebsite", function(value, element) {
-        return this.optional(element) || (/^[w]{3}.\w+.com$/.test(value));
+        return this.optional(element) || (/^[w]{3}.\w+.\w+$/.test(value));
     }, "Please enter a valid website.");
     //validate phone number
     jQuery.validator.addMethod("isPhone", function(value, element) {
         var length = value.length;
-        return this.optional(element) || (/^\(\d{3}\)\d{3}-\d{4}$/.test(value));
+        return this.optional(element) || (/^\d{3}-\d{3}-\d{4}$/.test(value));
     }, "Please enter a valid phone number.");
 
     //validate restaurant address
