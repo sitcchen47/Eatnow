@@ -49,7 +49,6 @@ router.get('/deleteRes/:id', async function(req, res) {
 router.get('/view/:id', async function (req, res) {
     let id = req.params.id;
     let rest = await Restaurants.findById(id);
-    console.log(rest);
     res.render('snippets/dishes', {
         user: req.user,
         rest: rest,
@@ -85,7 +84,7 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
     const city = xss(req.body.city);
     const state = xss(req.body.state);
     const zipcode = xss(req.body.zipcode);
-    const map = xss(req.body.map);
+    const map = req.body.map;
     // console.log(req.body);
     // validation()
 
