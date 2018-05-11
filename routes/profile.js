@@ -104,7 +104,9 @@ router.post('/upload', upload.single('restaurantPic'), async function (req, res)
         editDate: new Date(),
         dishes: []
     });
+    console.log("false");
     await rest.save();
+    console.log("success");
 
     // show on the page
     res.render('snippets/restaurants', {
